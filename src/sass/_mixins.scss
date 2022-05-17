@@ -1,0 +1,20 @@
+@mixin flexmiddle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexspacebtw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin dummyLink {
+  border: $thin-blue-border;
+  padding: 4px 16px;
+  border-radius: 4px;
+  margin: 8px 0;
+  text-decoration: none;
+  color: $secondary;
+}

@@ -1,0 +1,49 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  outline-color: $pink-dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 50%;
+
+  @include md {
+    font-size: 62.5%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  background-color: $white;
+  color: red ;
+
+
+
+  @keyframes slide-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.error {
+  color: red;
+}
