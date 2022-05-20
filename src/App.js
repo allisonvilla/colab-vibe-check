@@ -1,8 +1,8 @@
 import { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppLayout from "./AppLayout";
-import ErrorBoundary from "component/ErrorBoundary";
-import { FullPageSpinner } from "component/Loaders";
+import ErrorBoundary from "components/ErrorBoundary";
+import { FullPageSpinner } from "components/Loaders";
 import routes from "./routes/routesList";
 
 function App() {

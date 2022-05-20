@@ -1,9 +1,9 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
-import styles from "./styles.module.scss"
+import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./styles.module.scss";
 // import PropTypes from 'prop-types'
 
-function Index(props) {
+function Home(props) {
   return (
     <div className={styles.container}>
       Home
@@ -13,6 +13,6 @@ function Index(props) {
   );
 }
 
-Index.propTypes = {}
+Home.propTypes = {};
 
-export default Index
+export default Home;
