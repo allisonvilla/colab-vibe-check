@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 // import PropTypes from 'prop-types'
 
-function Index(props) {
+function About(props) {
   return (
     <div className={styles.container}>
       About
@@ -12,6 +12,6 @@ function Index(props) {
   );
 }
 
-Index.propTypes = {};
+About.propTypes = {};
 
-export default Index;
+export default About;

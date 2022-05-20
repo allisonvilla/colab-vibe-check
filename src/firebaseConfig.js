@@ -3,7 +3,7 @@ import { getDatabase } from "firebase/database";
 
 // Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCErTdLJvUh6eBIDEu4h1A7N3GlepVHvZo", // need to make this private in the future
+  apiKey: process.env.REACT_APP_FIREBASE_KEY,
   authDomain: "vibe-check-fed12.firebaseapp.com",
   databaseURL: "https://vibe-check-fed12-default-rtdb.firebaseio.com",
   projectId: "vibe-check-fed12",
