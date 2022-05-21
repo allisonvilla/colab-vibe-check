@@ -15,7 +15,6 @@ This extra information can help spark better conversations, which lead to more f
 
 ## Demo
 
-Insert gif or link to demo
 
 ## [Click here for live demo](https://colab-vibe-check.netlify.app/)
 ## Environment Variables
@@ -36,9 +35,9 @@ To run this project, you will need to add the following environment variables to
 **Server:** [Firebase](https://firebase.google.com/)
 
 
-## Lessons Learned
+<!-- ## Lessons Learned
 
-What did you learn while building this project? What challenges did you face and how did you overcome them?
+What did you learn while building this project? What challenges did you face and how did you overcome them? -->
 
 
 ## Run Locally
