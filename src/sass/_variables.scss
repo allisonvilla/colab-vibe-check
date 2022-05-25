@@ -1,4 +1,12 @@
 // colors
+
+// colours from gift's design
+$main-accent: #F64900; 
+$header-grey: rgba(0, 0, 0, 0.62); 
+$link-grey: #616161; 
+
+// default variables from app set up below: 
+// remove what we aren't using
 $primary: #2d4875;
 $secondary: #7693af;
 $seaBlue: #f6fafb;
@@ -10,10 +18,12 @@ $green-light-30: #fafdfd;
 $green-light: #12b36c;
 $green-dark: #12b36c66;
 $pink-dark: #E51E56;
+
 /* fontsizes */
-$default-font-sm: 1.4rem;
+// 1rem = 16px 
+$default-font-sm: 1rem;
 $default-font-mid: 1.6rem;
-$default-font-lg: 2.4rem;
+$default-font-lg: 2rem;
 
 $default-font-family: "Inter", sans-serif;
 

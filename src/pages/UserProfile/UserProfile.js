@@ -1,12 +1,11 @@
-import React from "react";
 import styles from "./styles.module.scss";
 
-const AppLayout = ({ children }) => {
+const UserProfile = () => {
   return (
     <div className={styles.container}>
-      {children}
+      <h2>User Profile goes here</h2>
     </div>
   );
 };
 
-export default AppLayout;
+export default UserProfile;

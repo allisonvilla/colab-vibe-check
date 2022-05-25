@@ -1,30 +1,29 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
-// import PropTypes from 'prop-types'
-
-// testing firebase
-import database from "../../firebaseConfig";
-import { ref, set } from "firebase/database";
+import NavBar from "components/NavBar/NavBar";
+import userData from "userData";
 
 function Home(props) {
-  // Testing Firebase
-  const firebaseTest = () => {
-    const ID = Math.floor(Math.random() * 500).toString();
-
-    set(ref(database, ID), {
-      test: "it is working"
-    });
-
-    console.log("Check Firebase");
-  };
-
   return (
     <div className={styles.container}>
-      Home
-      <div> Welcome to vibes-check</div>
-      <Link to="about">About</Link>
-      <button onClick={firebaseTest}>Test Firebase</button>
+      <img
+        src={require("../../assets/profile-picture-1.png")}
+        alt="A woman smiling with her arms crossed"
+      />
+
+      <h1>
+        {userData.userName} {userData.userAge}
+      </h1>
+
+      <Link to="/" className={styles.vibeCheckBtn}>
+        Vibe Check
+      </Link>
+
+      <Link to="/myprofile" className={styles.profilePreview}>
+        Preview Display Profile
+      </Link>
+
+      <NavBar />
     </div>
   );
 }
