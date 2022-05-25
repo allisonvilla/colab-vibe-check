@@ -1,10 +1,10 @@
-import "./styles.module.scss";
+import styles from "./styles.module.scss";
 
 const UserProfile = () => {
   return (
-    <section>
-      <h2>User Profile</h2>
-    </section>
+    <div className={styles.container}>
+      <h2>User Profile goes here</h2>
+    </div>
   );
 };
 

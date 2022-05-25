@@ -1,12 +1,9 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
-// import PropTypes from 'prop-types'
+import NavBar from "components/NavBar/NavBar";
+import userData from "userData";
 
 function Home(props) {
-  const userData = {
-    userName: `Onyinye`,
-    userAge: 24
-  };
   return (
     <div className={styles.container}>
       <img
@@ -22,9 +19,11 @@ function Home(props) {
         Vibe Check
       </Link>
 
-      <Link to="/" className={styles.profilePreview}>
+      <Link to="/myprofile" className={styles.profilePreview}>
         Preview Display Profile
       </Link>
+
+      <NavBar />
     </div>
   );
 }

@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 
 const Home = lazy(() => import("pages/Home/Home"));
 const About = lazy(() => import("pages/About/About"));
+const UserProfile = lazy(() => import("pages/UserProfile/UserProfile"));
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     path: "/about",
     exact: true,
     component: About
+  },
+  {
+    path: "/myprofile",
+    exact: true,
+    component: UserProfile
   },
   {
     path: "*",
