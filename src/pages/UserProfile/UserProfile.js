@@ -3,7 +3,7 @@ import "./styles.module.scss";
 const UserProfile = () => {
   return (
     <section>
-      <h2>Test</h2>
+      <h2>User Profile</h2>
     </section>
   );
 };
