@@ -15,6 +15,8 @@ function Home(props) {
         {userData.userName} {userData.userAge}
       </h1>
 
+      <div className={styles.divider}></div>
+
       <Link to="/" className={styles.vibeCheckBtn}>
         Vibe Check
       </Link>

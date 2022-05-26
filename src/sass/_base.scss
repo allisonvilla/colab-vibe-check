@@ -10,7 +10,7 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 50%;
+  font-size: 100%;
 
   @include md {
     font-size: 62.5%;
@@ -21,8 +21,6 @@ body {
   box-sizing: border-box;
   background-color: $white;
   color: red ;
-
-
 
   @keyframes slide-down {
     0% {
