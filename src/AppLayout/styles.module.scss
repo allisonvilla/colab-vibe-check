@@ -5,6 +5,8 @@
     margin: 0 auto;
     max-width: 428px;
     //max-height: 926px; 
-    background-color: #fff;
-    border: 1px solid grey; 
+    background-color:#fff;
+    border: 1px solid rgba(255, 255, 255, .01); 
+    border-radius: 25px;
+    box-shadow: 10px 20px 40px rgba(0,0,0,.2);
 }

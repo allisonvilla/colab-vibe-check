@@ -15,7 +15,7 @@ function Home(props) {
         {userData.userName} {userData.userAge}
       </h1>
 
-      <Link to="/" className={styles.vibeCheckBtn}>
+      <Link to="/vibecheck" className={styles.vibeCheckBtn}>
         Vibe Check
       </Link>
 
