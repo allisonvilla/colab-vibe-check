@@ -11,10 +11,6 @@
 html {
   scroll-behavior: smooth;
   font-size: 100%;
-
-  @include md {
-    font-size: 62.5%;
-  }
 }
 
 body {

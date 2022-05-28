@@ -12,6 +12,7 @@
         font-size: $default-font-lg;
         font-weight: 600; 
         margin-top: 45px; 
+        padding-bottom: 10px; 
     }
 
     a {
@@ -36,6 +37,7 @@
     color: white; 
     border: 1px solid $main-accent;
     margin-top: 35px; 
+    margin-bottom: 105px; 
     font-size: calc($default-font-sm + 2px) !important;
 }
 

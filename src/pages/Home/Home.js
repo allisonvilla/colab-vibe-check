@@ -22,7 +22,12 @@ function Home(props) {
       </Link>
 
       <Link to="/myprofile" className={styles.profilePreview}>
-        Preview Display Profile
+        Preview Display Profile{" "}
+        <img
+          src={require("../../assets/eye.png")}
+          alt="Eye icon"
+          className="profile-preview-icon"
+        />
       </Link>
 
       <NavBar />
