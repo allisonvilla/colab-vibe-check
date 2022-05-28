@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import NavBar from "components/NavBar/NavBar";
 import userData from "userData";
 
-function Home(props) {
+function Home() {
   return (
     <div className={styles.container}>
       <img
@@ -26,7 +26,7 @@ function Home(props) {
         <img
           src={require("../../assets/eye.png")}
           alt="Eye icon"
-          className="profile-preview-icon"
+          className={styles.profilePreviewIcon}
         />
       </Link>
 
@@ -34,7 +34,5 @@ function Home(props) {
     </div>
   );
 }
-
-Home.propTypes = {};
 
 export default Home;
