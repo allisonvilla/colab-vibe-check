@@ -2,14 +2,30 @@
 
 .container {
     @include flexmiddle;
-    height: 100vh;
+    height: 926px;
     width: 100%;
     flex-direction: column;
     justify-content: flex-start;
 
     h1 {
         color: $header-grey;
+        font-size: $default-font-lg;
+        font-weight: 600; 
+        margin-top: 55px; 
+        padding-bottom: 10px; 
     }
+
+    a {
+        font-size: $default-font-sm; 
+    }
+}
+
+.divider {
+    width: 294px;
+    height: 4px;
+    left: 67px;
+    top: 592px;
+    background: rgba(217, 217, 217, 0.27);
 }
 
 .vibeCheckBtn {
@@ -19,9 +35,21 @@
     background: $main-accent;
     border-radius: 28px;
     color: white; 
+    font-weight: 600; 
     border: 1px solid $main-accent;
+    margin-top: 35px; 
+    margin-bottom: 105px; 
+    font-size: calc($default-font-sm + 2px) !important;
 }
 
 .profilePreview {
     color: $link-grey; 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-weight: 500; 
+
+    img {
+        padding-left: 7px; 
+    }
 }
