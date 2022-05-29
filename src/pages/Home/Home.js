@@ -3,7 +3,7 @@ import styles from "./styles.module.scss";
 import NavBar from "components/NavBar/NavBar";
 import userData from "userData";
 
-function Home(props) {
+function Home() {
   return (
     <div className={styles.container}>
       <img
@@ -15,19 +15,24 @@ function Home(props) {
         {userData.userName} {userData.userAge}
       </h1>
 
+      <div className={styles.divider}></div>
+
       <Link to="/" className={styles.vibeCheckBtn}>
         Vibe Check
       </Link>
 
       <Link to="/myprofile" className={styles.profilePreview}>
-        Preview Display Profile
+        Preview Display Profile{" "}
+        <img
+          src={require("../../assets/eye.png")}
+          alt="Eye icon"
+          className={styles.profilePreviewIcon}
+        />
       </Link>
 
       <NavBar />
     </div>
   );
 }
-
-Home.propTypes = {};
 
 export default Home;

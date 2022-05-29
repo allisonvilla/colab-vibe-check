@@ -1,5 +1,18 @@
 @import "../../sass/main.scss";
 
 .container {
-    @include flexmiddle;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed; 
+    bottom: 0px; 
+    width: 100%; 
+    max-width: 428px; 
+    background-color: white;
+    border: 1px solid grey;
+    border-top: 2px solid rgba(217, 217, 217, 0.27);
+
+    a {
+        margin: 20px auto 15px; 
+    }
 }
