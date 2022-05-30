@@ -1,0 +1,41 @@
+@import "../../../../sass/main.scss";
+
+.container {
+  @include flexmiddle;
+  vertical-align: bottom;
+  padding: 2rem;
+
+  .wrapper {
+    width: 100%;
+    font-size: 14px;
+    font-weight: 600;
+    .headerRow {
+      @include flexspacebtw;
+      color: rgba(0, 0, 0, 0.62);
+      width: 100%;
+
+      .left {
+        span {
+          color: rgba(0, 0, 0, 0.37);
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+
+        svg {
+          margin-right: 8px;
+        }
+      }
+    }
+  }
+}
+.age {
+  color: rgba(0, 0, 0, 0.37);
+}
+
+.bodyWrapper{
+    @include flexmiddle;
+    width: 100%;
+}

@@ -1,4 +1,4 @@
-@import "../../sass/main.scss";
+@import "../../../../sass/main.scss";
 
 .container {
   @include flexmiddle;
@@ -9,8 +9,15 @@
   .topSection {
     .backgroungRect {
       position: absolute;
-      top: 0;
-      right: 0;
+      top: 10px;
+      right: 2px;
+      width: 380px;
+      height: 480px;
+    // border-top-right-radius: 25px;
+    background-image: url("../../../../assets/Rectangle 1052.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
     }
     .splashImg {
       min-height: 320px;
@@ -69,28 +76,8 @@
 
     .linkBtn {
       @include flexmiddle;
-      width: 245px;
-      height: 60px;
-      background: $main-accent;
-      border-radius: 28px;
-      color: white;
-      border: 1px solid $main-accent;
-      margin: 0 auto;
-      margin-top: 100px;
-      justify-content: center;
-      transition: 0.3s;
-      svg {
-        margin-left: 20px;
-        transition: .9s;
-      }
+      @include primaryBtnStyle;
     }
-    .linkBtn:hover {
-      transform: translateY(-3px);
-      box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
-      filter: brightness(1.1);
-      svg {
-        transform: translateX(10px);
-      }
-    }
+
   }
 }
