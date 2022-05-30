@@ -18,3 +18,32 @@
   text-decoration: none;
   color: $secondary;
 }
+
+@mixin primaryBtnStyle{
+  width: 245px;
+  height: 60px;
+  background: $main-accent;
+  border-radius: 28px;
+  color: white;
+  border: 1px solid $main-accent;
+  margin: 10px auto;
+  margin-top: 100px;
+  justify-content: center;
+  transition: 0.3s;
+  font-size: calc($default-font-sm + 2px) !important;
+  // cursor: pointer;
+    font-family: "Inter";
+  svg {
+    margin-left: 20px;
+    transition: 0.9s;
+  }
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
+    filter: brightness(1.1);
+  
+    svg {
+      transform: translateX(10px);
+    }
+  }
+}
