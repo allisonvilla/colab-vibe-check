@@ -4,20 +4,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
   outline-color: $pink-dark;
 }
 
 html {
   scroll-behavior: smooth;
   font-size: 100%;
+  font-family: "Inter";
 }
 
 body {
   box-sizing: border-box;
   background-color: $white;
   color: red ;
-
+  font-family: "Inter";
   @keyframes slide-down {
     0% {
       opacity: 0;
@@ -40,4 +40,11 @@ ul {
 
 .error {
   color: red;
+}
+button{
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+  color: inherit;
 }
