@@ -1,33 +1,32 @@
 import React from "react";
 import { renderView, vibesReducers } from "./utils";
 
-
 export const VibeCheckContext = React.createContext();
 VibeCheckContext.displayName = "VibeCheckContext";
 
 const initialvalues = {
-  totalScore:0
+  seriousDater: 0,
+  casualDater: 0,
+  goWithTheFlow: 0,
+  workingOnMyself: 0
 };
 
 const Index = () => {
   const { Provider } = VibeCheckContext;
-  const [values, setValues] = React.useState(initialvalues);
+  const [possibleOutcomes, setPossibleOutcomes] = React.useState(initialvalues);
   const [state, dispatch] = React.useReducer(vibesReducers, {
     view: "step1",
     values: initialvalues
   });
 
-
-
   return (
-    <Provider value={{ state, dispatch, values, setValues }}>
+    <Provider value={{ state, dispatch, possibleOutcomes, setPossibleOutcomes }}>
       <div>{renderView(state)}</div>
     </Provider>
   );
 };
 
 export default Index;
-
 
 export const useVibeCheckContext = () => {
   const context = React.useContext(VibeCheckContext);

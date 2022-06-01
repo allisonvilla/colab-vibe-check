@@ -35,7 +35,21 @@
   color: rgba(0, 0, 0, 0.37);
 }
 
-.bodyWrapper{
-    @include flexmiddle;
-    width: 100%;
+.breakScreen{
+  text-align: center;
+  margin: 60px 0;
+  button {
+    border: 1px solid $main-accent;
+    width: 50%;
+    margin: 50px auto;
+    border-radius: 5px;
+    padding: 10px;
+    color: $main-accent;
+  &:hover{
+    background: $main-accent;
+    color: #fff;
+  }
+  }
 }
+
+
