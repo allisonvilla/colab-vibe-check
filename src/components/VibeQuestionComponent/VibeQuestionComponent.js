@@ -11,7 +11,7 @@ export const VibeQuestionComponent = ({
   options,
   setAnswer,
   nextScreen,
-  showTextInput=false
+  showTextInput = false
 }) => {
   const innerDivRef = useRef(null);
   const innerDiv1Ref = useRef(null);
@@ -19,14 +19,18 @@ export const VibeQuestionComponent = ({
   const [checkedOption, setCheckedOption] = useState({});
   const [svg, setSvg] = useState("");
 
+  const gotoNextScreen = () => {
+    setTimeout(() => {
+      nextScreen();
+    }, 700);
+  };
   //set answer in parent component
   useEffect(() => {
     setAnswer(checkedOption);
     if (checkedOption.option && checkedOption.option !== "text-input") {
-      setTimeout(() => {
-        nextScreen();
-      }, 700);
+      gotoNextScreen();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkedOption, nextScreen, setAnswer]);
 
   useEffect(() => {
@@ -56,7 +60,7 @@ export const VibeQuestionComponent = ({
                 isLabelVisible={false}
                 labelColor="#f3eeee"
                 animateOnRender
-                initCompletedOnAnimation={(progress-1)*10}
+                initCompletedOnAnimation={(progress - 1) * 10}
               />
               <span>{progress}/10</span>
             </div>
@@ -93,7 +97,7 @@ export const VibeQuestionComponent = ({
                     onChange={(e) => handleUpdate({ option: "text-input", value: e.target.value })}
                   />
                   <button
-                    onClick={nextScreen}
+                    onClick={gotoNextScreen}
                     disabled={
                       !(checkedOption?.option === "text-input" && checkedOption?.value.length > 1)
                     }

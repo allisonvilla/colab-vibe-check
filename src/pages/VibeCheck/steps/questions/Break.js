@@ -9,7 +9,9 @@ function Index() {
   const { dispatch } = useVibeCheckContext();
 
   const nextScreen = () => {
-    dispatch({ type: "STEP8" });
+    setTimeout(() => {
+      dispatch({ type: "STEP8" });
+    }, 700);
   };
 
   return (
