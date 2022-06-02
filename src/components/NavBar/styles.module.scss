@@ -15,4 +15,7 @@
   a {
     margin: 20px auto 15px;
   }
+  @media screen and (max-width: 750px) {
+    position: fixed;
+  }
 }
