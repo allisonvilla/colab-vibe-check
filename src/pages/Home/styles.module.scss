@@ -1,55 +1,69 @@
 @import "../../sass/main.scss";
 
 .container {
-    @include flexmiddle;
-    height: 926px;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
+  @include flexmiddle;
+  height: 926px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    h1 {
-        color: $header-grey;
-        font-size: $default-font-lg;
-        font-weight: 600; 
-        margin-top: 55px; 
-        padding-bottom: 10px; 
-    }
+  .spacer {
+    flex-grow: 1;
+  }
 
-    a {
-        font-size: $default-font-sm; 
-    }
+  h1 {
+    color: $header-grey;
+    font-size: $default-font-lg;
+    font-weight: 600;
+    margin-top: 55px;
+    padding-bottom: 10px;
+  }
+
+  a {
+    font-size: $default-font-sm;
+  }
+}
+
+.imgWrapper {
+  background-image: url("../../assets/profile-picture-1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 430px;
+  margin: 20px 0;
 }
 
 .divider {
-    width: 294px;
-    height: 4px;
-    left: 67px;
-    top: 592px;
-    background: rgba(217, 217, 217, 0.27);
+  width: 294px;
+  height: 4px;
+  left: 67px;
+  top: 592px;
+  background: rgba(217, 217, 217, 0.27);
 }
 
 .vibeCheckBtn {
-    @include flexmiddle;
-    width: 245px;
-    height: 60px;
-    background: $main-accent;
-    border-radius: 28px;
-    color: white; 
-    font-weight: 600; 
-    border: 1px solid $main-accent;
-    margin-top: 35px; 
-    margin-bottom: 105px; 
-    font-size: calc($default-font-sm + 2px) !important;
+  @include flexmiddle;
+  @include primaryBtnStyle;
+  // width: 245px;
+  // height: 60px;
+  // background: $main-accent;
+  // border-radius: 28px;
+  // color: white;
+  // font-weight: 600;
+  // border: 1px solid $main-accent;
+  // margin-top: 35px;
+  // margin-bottom: 105px;
+  // font-size: calc($default-font-sm + 2px) !important;
 }
 
 .profilePreview {
-    color: $link-grey; 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    font-weight: 500; 
+  color: $link-grey;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-weight: 500;
 
-    img {
-        padding-left: 7px; 
-    }
+  img {
+    padding-left: 7px;
+  }
 }

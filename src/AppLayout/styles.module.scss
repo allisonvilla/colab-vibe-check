@@ -2,9 +2,11 @@
 
 .container {
     width: 100%;
-    margin: 0 auto;
+    margin: 20px auto;
     max-width: 428px;
-    min-height: 926px; 
-    background-color: #fff;
-    border: 1px solid grey; 
+    //max-height: 926px; 
+    background-color:#fff;
+    border: 1px solid rgba(255, 255, 255, .01); 
+    border-radius: 25px;
+    box-shadow: 10px 20px 40px rgba(0,0,0,.2);
 }

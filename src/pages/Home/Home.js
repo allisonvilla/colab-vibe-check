@@ -6,18 +6,17 @@ import userData from "userData";
 function Home() {
   return (
     <div className={styles.container}>
-      <img
-        src={require("../../assets/profile-picture-1.png")}
-        alt="A woman smiling with her arms crossed"
-      />
+      <div className={styles.imgWrapper}></div>
+      {/* <img
+          src={require("../../assets/profile-picture-1.png")}
+          alt="A woman smiling with her arms crossed"
+        /> */}
 
       <h1>
         {userData.userName} {userData.userAge}
       </h1>
 
-      <div className={styles.divider}></div>
-
-      <Link to="/" className={styles.vibeCheckBtn}>
+      <Link to="/vibecheck" className={styles.vibeCheckBtn}>
         Vibe Check
       </Link>
 
@@ -29,7 +28,7 @@ function Home() {
           className={styles.profilePreviewIcon}
         />
       </Link>
-
+      <div className={styles.spacer} />
       <NavBar />
     </div>
   );
