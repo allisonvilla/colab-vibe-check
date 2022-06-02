@@ -45,20 +45,20 @@
             animation: slide-in 1s forwards;
             transform: translateX(100%);
             -webkit-transform: translateX(100%);
-            
+
             @keyframes slide-in {
               100% {
                 transform: translateX(0%);
               }
             }
-            
+
             @-webkit-keyframes slide-in {
               100% {
                 -webkit-transform: translateX(0%);
               }
             }
           }
-          .svgFemale{
+          .svgFemale {
             animation: slide-in 1s forwards;
             transform: translateX(-100%);
             -webkit-transform: translateX(-100%);
@@ -67,7 +67,7 @@
                 transform: translateX(0%);
               }
             }
-            
+
             @-webkit-keyframes slide-in {
               100% {
                 -webkit-transform: translateX(0%);
@@ -109,6 +109,5 @@
       @include flexmiddle;
       @include primaryBtnStyle;
     }
-
   }
 }

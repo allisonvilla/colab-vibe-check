@@ -96,6 +96,9 @@
 
             &:hover {
               filter: brightness(0.8);
+              @media screen and (max-width: 750px) {
+                filter: unset;
+              }
             }
 
             &.active {
