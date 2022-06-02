@@ -56,6 +56,7 @@ export const VibeQuestionComponent = ({
                 isLabelVisible={false}
                 labelColor="#f3eeee"
                 animateOnRender
+                initCompletedOnAnimation={(progress-1)*10}
               />
               <span>{progress}/10</span>
             </div>
