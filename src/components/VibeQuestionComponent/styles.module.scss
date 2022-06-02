@@ -124,6 +124,11 @@
               &:disabled {
                 color: #ddd;
                 border: 1px solid #ddd;
+                cursor: not-allowed;
+              }
+              &:hover:not(:disabled) {
+                background: $primary;
+                color: #fff;
               }
             }
           }
