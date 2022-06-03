@@ -11,7 +11,7 @@ import Q7 from "./steps/questions/Q7";
 import Q8 from "./steps/questions/Q8";
 import Q9 from "./steps/questions/Q9";
 import Q10 from "./steps/questions/Q10";
-import Results from "./Results";
+import Results from "./Results/Results";
 
 export function renderView(state) {
   const { view } = state;

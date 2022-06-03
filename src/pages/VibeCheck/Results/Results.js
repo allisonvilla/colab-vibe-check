@@ -1,4 +1,5 @@
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
+import styles from "./styles.module.scss";
 
 const Results = () => {
   return (
@@ -12,12 +13,20 @@ const Results = () => {
         for (const type in possibleOutcomes) {
           if (possibleOutcomes[type] > highestCount) {
             highestCount = possibleOutcomes[type];
-            daterType = type;
+            daterType = type.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, function (str) {
+              return str.toUpperCase();
+            });
           }
         }
+
         console.log(`Highest Count: ${highestCount}`);
         console.log(`Final Dater Type: ${daterType}`);
-        return <p>Your dater type is '{daterType}'!</p>;
+
+        return (
+          <div className={styles.container}>
+            <h1>Your dater type is '{daterType}'!</h1>
+          </div>
+        );
       }}
     </VibeCheckContext.Consumer>
   );

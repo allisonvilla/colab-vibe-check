@@ -5,7 +5,7 @@ const Home = lazy(() => import("pages/Home/Home"));
 const About = lazy(() => import("pages/About/About"));
 const UserProfile = lazy(() => import("pages/UserProfile/UserProfile"));
 const VibeCheck = lazy(() => import("pages/VibeCheck/VibeCheck"));
-const Results = lazy(() => import("pages/VibeCheck/Results"));
+const Results = lazy(() => import("pages/VibeCheck/Results/Results"));
 
 const routes = [
   {
