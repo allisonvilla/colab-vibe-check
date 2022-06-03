@@ -6,7 +6,6 @@ import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import userData from "userData";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
-
 function Index() {
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
@@ -15,29 +14,29 @@ function Index() {
   const options = [
     {
       option: "Fire at a campsite.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Summertime rain.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Fresh laundry.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "My favourite meal.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     }
   ];
 
-  const nextScreen =()=>{
-    dispatch({type:"STEP11"})
-  }
+  const nextScreen = () => {
+    dispatch({ type: "STEP11" });
+  };
   console.log(answer);
 
   return (
@@ -61,5 +60,3 @@ function Index() {
 Index.propTypes = {};
 
 export default Index;
-
-

@@ -6,7 +6,6 @@ import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import userData from "userData";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
-
 function Index() {
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
@@ -15,29 +14,29 @@ function Index() {
   const options = [
     {
       option: "Time travel",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Super strength",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Invisibility",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Teleportation",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     }
   ];
 
-  const nextScreen =()=>{
-    dispatch({type:"STEP12"})
-  }
+  const nextScreen = () => {
+    dispatch({ type: "STEP12" });
+  };
   console.log(answer);
 
   return (
@@ -61,5 +60,3 @@ function Index() {
 Index.propTypes = {};
 
 export default Index;
-
-

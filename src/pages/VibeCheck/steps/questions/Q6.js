@@ -6,7 +6,6 @@ import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import userData from "userData";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
-
 function Index() {
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
@@ -15,29 +14,29 @@ function Index() {
   const options = [
     {
       option: "Learning a specific skill.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Skydiving.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Climbing Mount Everest.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Moving to a favourite city.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     }
   ];
 
-  const nextScreen =()=>{
-    dispatch({type:"STEP9"})
-  }
+  const nextScreen = () => {
+    dispatch({ type: "STEP9" });
+  };
   console.log(answer);
 
   return (
@@ -50,7 +49,9 @@ function Index() {
           </button>
         </div>
         <div className={styles.age}>{userData.userAge}</div>
-        <VibeQuestionComponent {...{ progress, question, options, setAnswer, nextScreen,showTextInput:true }} />
+        <VibeQuestionComponent
+          {...{ progress, question, options, setAnswer, nextScreen, showTextInput: true }}
+        />
       </div>
     </div>
   );
@@ -59,5 +60,3 @@ function Index() {
 Index.propTypes = {};
 
 export default Index;
-
-

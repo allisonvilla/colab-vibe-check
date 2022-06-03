@@ -6,7 +6,6 @@ import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import userData from "userData";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
-
 function Index() {
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
@@ -16,29 +15,29 @@ function Index() {
   const options = [
     {
       option: "Have a video or phone call.",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Keep chatting on the app for some time. ",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Meet them in person. ",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     },
     {
       option: "Continue talking on another platform. ",
-      value: "",
-      weight: ""
+      value: "noEffect",
+      weight: 0
     }
   ];
 
-  const nextScreen =()=>{
-    dispatch({type:"STEP7"})
-  }
+  const nextScreen = () => {
+    dispatch({ type: "STEP7" });
+  };
   console.log(answer);
 
   return (
@@ -60,5 +59,3 @@ function Index() {
 Index.propTypes = {};
 
 export default Index;
-
-

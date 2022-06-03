@@ -6,7 +6,6 @@ import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import userData from "userData";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
-
 function Index() {
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
@@ -15,29 +14,29 @@ function Index() {
   const options = [
     {
       option: "Personal Development",
-      value: "Working on myself",
+      value: "workingOnMyself",
       weight: 1
     },
     {
       option: "Relationship",
-      value: "Serious Dater",
+      value: "seriousDater",
       weight: 1
     },
     {
       option: "Career or Financial",
-      value: "Working on myself",
+      value: "workingOnMyself",
       weight: 1
     },
     {
       option: "Spiritual or Societal",
-      value: "Casual Dater",
+      value: "casualDater",
       weight: 1
     }
   ];
 
-  const nextScreen =()=>{
-    dispatch({type:"STEP6"})
-  }
+  const nextScreen = () => {
+    dispatch({ type: "STEP6" });
+  };
   console.log(answer);
 
   return (
@@ -59,5 +58,3 @@ function Index() {
 Index.propTypes = {};
 
 export default Index;
-
-

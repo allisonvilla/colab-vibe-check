@@ -6,7 +6,6 @@ import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import userData from "userData";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
-
 function Index() {
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
@@ -15,29 +14,29 @@ function Index() {
   const options = [
     {
       option: "Casual fun, no commitments.",
-      value: "Casual Dater",
+      value: "casualDater",
       weight: 3
     },
     {
       option: "Not actively looking for anything, too busy right now.",
-      value: "Working on myself",
+      value: "workingOnMyself",
       weight: 3
     },
     {
       option: "Open to meeting people and seeing where things go!",
-      value: "Go with the flow",
+      value: "goWithTheFlow",
       weight: 3
     },
     {
       option: "Forming a meaningful romantic connection.",
-      value: "Serious Dater",
+      value: "seriousDater",
       weight: 3
     }
   ];
 
-  const nextScreen =()=>{
-    dispatch({type:"STEP4"})
-  }
+  const nextScreen = () => {
+    dispatch({ type: "STEP4" });
+  };
   console.log(answer);
 
   return (
@@ -59,5 +58,3 @@ function Index() {
 Index.propTypes = {};
 
 export default Index;
-
-

@@ -14,23 +14,23 @@ function Index() {
   const options = [
     {
       option: "Going for a walk.",
-      value: "Go with the flow",
+      value: "goWithTheFlow",
       weight: 1
     },
     {
       option: "Watching a movie.",
-      value: "Go with the flow",
+      value: "goWithTheFlow",
       weight: 1
     },
     {
       option: "A quick coffee date.",
-      value: "Working on myself",
+      value: "workingOnMyself",
       weight: 1
     },
     {
       option: "Going out to a bar.",
-      value: "Casual Dater",
-      weight: 1,
+      value: "casualDater",
+      weight: 1
     }
   ];
 
