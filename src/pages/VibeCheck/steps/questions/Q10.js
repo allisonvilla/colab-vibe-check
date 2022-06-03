@@ -35,7 +35,7 @@ function Index() {
   ];
 
   const nextScreen = () => {
-    // dispatch({type:"STEP10"})
+    dispatch({ type: "STEP13" });
   };
   console.log(answer);
 
