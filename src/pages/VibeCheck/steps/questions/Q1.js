@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 // import PropTypes from 'prop-types'
 import styles from "./styles.module.scss";
 import { ReactComponent as ReturnBtn } from "assets/returnBtn.svg";
 import { useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
-import userData from "userData";
+import { UserContext } from "App";
 import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQuestionComponent";
 
 function Index() {
+  const userContext = useContext(UserContext);
   const { dispatch } = useVibeCheckContext();
   const [answer, setAnswer] = useState("");
   const progress = 1;
@@ -43,12 +44,12 @@ function Index() {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.headerRow}>
-          <div className={styles.left}>{userData.userName}</div>
+          <div className={styles.left}>{userContext.userData.name}</div>
           <button className={styles.right} onClick={() => dispatch({ type: "STEP1" })}>
             <ReturnBtn /> Return
           </button>
         </div>
-        <div className={styles.age}>{userData.userAge}</div>
+        <div className={styles.age}>{userContext.userData.age}</div>
         <VibeQuestionComponent {...{ progress, question, options, setAnswer, nextScreen }} />
       </div>
     </div>

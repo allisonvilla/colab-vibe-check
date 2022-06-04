@@ -13,9 +13,11 @@ const Results = () => {
         for (const type in possibleOutcomes) {
           if (possibleOutcomes[type] > highestCount) {
             highestCount = possibleOutcomes[type];
-            daterType = type.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, function (str) {
-              return str.toUpperCase();
-            });
+            daterType = type
+              .replace(/([a-z])([A-Z])/g, "$1 $2")
+              .replace(/^./, (str) => str.toUpperCase());
+            //   } else if (possibleOutcomes[type] === highestCount) {
+            //     daterType = "Go With The Flow";
           }
         }
 
