@@ -22,11 +22,10 @@ export const VibeQuestionComponent = ({
   const [svg, setSvg] = useState("");
   const { setQuizData } = useContext(UserContext);
 
-  //set answer in parent component
   useEffect(() => {
-    setAnswer(checkedOption);
     if (checkedOption.option && checkedOption.option !== "text-input") {
       setTimeout(() => {
+        setCheckedOption({});
         nextScreen();
       }, 700);
     }
@@ -143,6 +142,5 @@ VibeQuestionComponent.propTypes = {
   progress: PropTypes.number,
   question: PropTypes.string,
   options: PropTypes.array.isRequired,
-  setAnswer: PropTypes.func.isRequired,
   nextScreen: PropTypes.func.isRequired
 };

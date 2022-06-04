@@ -16,8 +16,7 @@ const Index = () => {
   const { Provider } = VibeCheckContext;
   const [possibleOutcomes, setPossibleOutcomes] = React.useState(initialvalues);
   const [state, dispatch] = React.useReducer(vibesReducers, {
-    view: "step1",
-    values: initialvalues
+    view: "step1"
   });
 
   return (

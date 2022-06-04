@@ -1,16 +1,17 @@
 /* eslint-disable indent */
 import Step1 from "./steps/step1/step1";
-import Q1 from "./steps/questions/Q1";
-import Q2 from "./steps/questions/Q2";
-import Q3 from "./steps/questions/Q3";
-import Q4 from "./steps/questions/Q4";
+// import Q1 from "./steps/questions/Q1";
+// import Q2 from "./steps/questions/Q2";
+// import Q3 from "./steps/questions/Q3";
+// import Q4 from "./steps/questions/Q4";
 import Break from "./steps/questions/Break";
-import Q6 from "./steps/questions/Q6";
-import Q5 from "./steps/questions/Q5";
-import Q7 from "./steps/questions/Q7";
-import Q8 from "./steps/questions/Q8";
-import Q9 from "./steps/questions/Q9";
-import Q10 from "./steps/questions/Q10";
+// import Q6 from "./steps/questions/Q6";
+// import Q5 from "./steps/questions/Q5";
+// import Q7 from "./steps/questions/Q7";
+// import Q8 from "./steps/questions/Q8";
+// import Q9 from "./steps/questions/Q9";
+// import Q10 from "./steps/questions/Q10";
+import Question from "./steps/questions/Question";
 import Results from "./Results/Results";
 
 export function renderView(state) {
@@ -20,27 +21,27 @@ export function renderView(state) {
     default:
       return <Step1 />;
     case "step2":
-      return <Q1 />;
+      return <Question progress={1} />;
     case "step3":
-      return <Q2 />;
+      return <Question progress={2} />;
     case "step4":
-      return <Q3 />;
+      return <Question progress={3} />;
     case "step5":
-      return <Q4 />;
+      return <Question progress={4} />;
     case "step6":
-      return <Q5 />;
+      return <Question progress={5} />;
     case "step7":
       return <Break />;
     case "step8":
-      return <Q6 />;
+      return <Question progress={6} />;
     case "step9":
-      return <Q7 />;
+      return <Question progress={7} />;
     case "step10":
-      return <Q8 />;
+      return <Question progress={8} />;
     case "step11":
-      return <Q9 />;
+      return <Question progress={9} />;
     case "step12":
-      return <Q10 />;
+      return <Question progress={10} />;
     case "step13":
       return <Results />;
   }
