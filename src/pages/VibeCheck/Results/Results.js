@@ -1,7 +1,11 @@
+import { UserContext } from "App";
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
+import { useContext } from "react";
 import styles from "./styles.module.scss";
 
 const Results = () => {
+  const { setQuizData } = useContext(UserContext);
+
   return (
     <VibeCheckContext.Consumer>
       {({ possibleOutcomes }) => {
@@ -20,6 +24,12 @@ const Results = () => {
             //     daterType = "Go With The Flow";
           }
         }
+
+        setQuizData((prevState) => {
+          let newState = { ...prevState };
+          newState.type = daterType;
+          return newState;
+        });
 
         console.log(`Highest Count: ${highestCount}`);
         console.log(`Final Dater Type: ${daterType}`);

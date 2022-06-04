@@ -18,7 +18,7 @@ function App() {
   };
 
   const defaultQuiz = {
-    daterType: null,
+    type: null,
     q1: null,
     q2: null,
     q3: null,
