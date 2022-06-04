@@ -1,10 +1,11 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import styles from "./styles.module.scss";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { ReactComponent as ValentineSVG } from "assets/valentine.svg";
 import { ReactComponent as HeartWithRoses } from "assets/heartwithroses.svg";
 import PropTypes from "prop-types";
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
+import { UserContext } from "App";
 
 export const VibeQuestionComponent = ({
   progress,
@@ -19,6 +20,7 @@ export const VibeQuestionComponent = ({
   const innerDiv2Ref = useRef(null);
   const [checkedOption, setCheckedOption] = useState({});
   const [svg, setSvg] = useState("");
+  const { setQuizData } = useContext(UserContext);
 
   //set answer in parent component
   useEffect(() => {
@@ -79,6 +81,15 @@ export const VibeQuestionComponent = ({
                             let newScore = { ...prevScore };
                             newScore[value] = prevScore[value] + weight;
                             return newScore;
+                          });
+                          setQuizData((prevState) => {
+                            let newState = { ...prevState };
+                            newState[`q${progress}`] = {
+                              qKey: `q${progress}`,
+                              question: question,
+                              answer: option
+                            };
+                            return newState;
                           });
                         }}
                         className={`${styles.singleOption} ${
