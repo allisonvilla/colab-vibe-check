@@ -85,9 +85,9 @@ export const VibeQuestionComponent = ({
                           setQuizData((prevState) => {
                             let newState = { ...prevState };
                             newState[`q${progress}`] = {
-                              qKey: `q${progress}`,
                               question: question,
-                              answer: option
+                              answer: option,
+                              type: value
                             };
                             return newState;
                           });
