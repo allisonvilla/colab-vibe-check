@@ -7,6 +7,9 @@ import PropTypes from "prop-types";
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import { UserContext } from "App";
 
+
+
+
 export const VibeQuestionComponent = ({
   progress,
   question,
@@ -22,17 +25,14 @@ export const VibeQuestionComponent = ({
   const [svg, setSvg] = useState("");
   const { setQuizData } = useContext(UserContext);
 
-  const gotoNextScreen = () => {
-    setTimeout(() => {
-      nextScreen();
-    }, 700);
-  };
   //set answer in parent component
   useEffect(() => {
     if (checkedOption.option && checkedOption.option !== "text-input") {
-      gotoNextScreen();
+      setTimeout(() => {
+        setCheckedOption({});
+        nextScreen();
+      }, 700);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [checkedOption, nextScreen, setAnswer]);
 
   useEffect(() => {
@@ -42,8 +42,8 @@ export const VibeQuestionComponent = ({
     }
     //dynamically set svg icon
     const arr = [<ValentineSVG />, <HeartWithRoses />];
-    setSvg(arr[Math.floor(Math.random() * arr.length)]);
-  }, []);
+    setSvg(arr[progress % 2]);
+  }, [nextScreen, checkedOption, progress]);
 
   const handleUpdate = (data) => {
     setCheckedOption(data);
@@ -53,7 +53,7 @@ export const VibeQuestionComponent = ({
     <VibeCheckContext.Consumer>
       {({ setPossibleOutcomes }) => (
         <div className={styles.bodyWrapper}>
-          <div className={styles.innerWrapper}>
+          <div key={progress} className={styles.innerWrapper}>
             <div className={styles.inner} ref={innerDivRef}>
               <div className={styles.header}>
                 <div className={styles.progressBar}>
@@ -133,7 +133,11 @@ export const VibeQuestionComponent = ({
                 </div>
               </div>
             </div>
-            <div className={styles.inner1} ref={innerDiv1Ref} />
+            <div className={styles.inner1} ref={innerDiv1Ref}>
+              {[...new Array(4)].map(() => (
+                <div className={styles.fakeQuestion} />
+              ))}
+            </div>
             <div className={styles.inner2} ref={innerDiv2Ref} />
           </div>
         </div>
@@ -146,5 +150,6 @@ VibeQuestionComponent.propTypes = {
   progress: PropTypes.number,
   question: PropTypes.string,
   options: PropTypes.array.isRequired,
-  nextScreen: PropTypes.func.isRequired
+  nextScreen: PropTypes.func.isRequired,
+  showTextInput: PropTypes.bool
 };
