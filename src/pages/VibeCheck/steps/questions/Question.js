@@ -27,6 +27,7 @@ function Index(props) {
 
   let question;
   let options;
+  let showTextInput;
 
   if (progress <= 5) {
     question = consistent[`q${progress}`].question;
@@ -35,6 +36,7 @@ function Index(props) {
     // TODO: randomize these questions
     question = random[`q${progress}`].question;
     options = random[`q${progress}`].options;
+    showTextInput = random[`q${progress}`].showTextInput;
   }
 
   return (
@@ -47,7 +49,7 @@ function Index(props) {
           </button>
         </div>
         <div className={styles.age}>{userContext.userData.age}</div>
-        <VibeQuestionComponent {...{ progress, question, options, nextScreen }} />
+        <VibeQuestionComponent {...{ progress, question, options, nextScreen, showTextInput }} />
       </div>
     </div>
   );

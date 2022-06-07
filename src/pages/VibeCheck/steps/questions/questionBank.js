@@ -131,6 +131,7 @@ const questionBank = {
   random: {
     q6: {
       question: "Choose one thing you want to have on your bucket list:",
+      showTextInput: true,
       options: [
         {
           option: "Learning a specific skill.",
@@ -156,6 +157,7 @@ const questionBank = {
     },
     q7: {
       question: "If all animals were the same size, who would win in a fight?",
+      showTextInput: true,
       options: [
         {
           option: "Hippos",
@@ -181,6 +183,7 @@ const questionBank = {
     },
     q8: {
       question: "What is your favourite smell?",
+      showTextInput: true,
       options: [
         {
           option: "Fire at a campsite.",
@@ -206,6 +209,7 @@ const questionBank = {
     },
     q9: {
       question: "What superpower would you want to have?",
+      showTextInput: true,
       options: [
         {
           option: "Time travel",
@@ -231,6 +235,7 @@ const questionBank = {
     },
     q10: {
       question: "What would you do with 1 million dollars?",
+      showTextInput: true,
       options: [
         {
           option: "Travel the world.",
