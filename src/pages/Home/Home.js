@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 import NavBar from "components/NavBar/NavBar";
-import userData from "userData";
+import { useContext } from "react";
+import { UserContext } from "App";
 
 function Home() {
+  const userContext = useContext(UserContext);
   return (
     <div className={styles.container}>
       <div className={styles.imgWrapper}></div>
-      {/* <img
-          src={require("../../assets/profile-picture-1.png")}
-          alt="A woman smiling with her arms crossed"
-        /> */}
 
       <h1>
-        {userData.userName} {userData.userAge}
+        {userContext.userData.name} {userContext.userData.age}
       </h1>
 
       <Link to="/vibecheck" className={styles.vibeCheckBtn}>
