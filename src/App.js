@@ -23,53 +23,63 @@ function App() {
       // These values are set in VibeQuestionComponent.js
       question: null, // Question asked
       answer: null, // User's answer
-      type: null // Dater type the question affected
+      type: null, // Dater type the question affected
+      show: true // Whether or not the user chooses to show this answer
     },
     q2: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q3: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q4: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     // Questions 5-10 are the only ones that may get shown on user's profile
     q5: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q6: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q7: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q8: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q9: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     },
     q10: {
       question: null,
       answer: null,
-      type: null
+      type: null,
+      show: true
     }
   };
 

@@ -8,8 +8,16 @@ const Results = () => {
   const { possibleOutcomes } = useContext(VibeCheckContext);
 
   const [daterType, setDaterType] = useState("");
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
+    const descriptions = {
+      seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
+      casualDater: `This is a description for casual daters.`,
+      goWithTheFlow: `This is a description for go with the flow.`,
+      workingOnMyself: `This is a description for working on myself`
+    };
+
     let highestCount = 0;
 
     console.log(possibleOutcomes);
@@ -17,6 +25,7 @@ const Results = () => {
     for (const type in possibleOutcomes) {
       if (possibleOutcomes[type] > highestCount) {
         highestCount = possibleOutcomes[type];
+        setDescription(descriptions[type]);
         setDaterType(
           type.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())
         );
@@ -28,13 +37,17 @@ const Results = () => {
     setUserData((prevState) => {
       let newState = { ...prevState };
       newState.daterType = daterType;
+      newState.quizComplete = true;
       return newState;
     });
   }, [daterType, possibleOutcomes, setUserData]);
 
   return (
     <div className={styles.container}>
-      <h1>Your dater type is '{daterType}'!</h1>
+      <h1>{userData.name}'s Result</h1>
+      <h2>{userData.daterType}</h2>
+      {/* Image goes here */}
+      <p className="description">{description}</p>
     </div>
   );
 };
