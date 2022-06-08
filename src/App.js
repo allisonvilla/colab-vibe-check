@@ -24,62 +24,72 @@ function App() {
       question: null, // Question asked
       answer: null, // User's answer
       type: null, // Dater type the question affected
-      show: true // Whether or not the user chooses to show this answer
+      show: true, // Whether or not the user chooses to show this answer
+      key: 1
     },
     q2: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 2
     },
     q3: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 3
     },
     q4: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 4
     },
     // Questions 5-10 are the only ones that may get shown on user's profile
     q5: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 5
     },
     q6: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 6
     },
     q7: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 7
     },
     q8: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 8
     },
     q9: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 9
     },
     q10: {
       question: null,
       answer: null,
       type: null,
-      show: true
+      show: true,
+      key: 10
     }
   };
 

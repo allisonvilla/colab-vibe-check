@@ -42,12 +42,47 @@ const Results = () => {
     });
   }, [daterType, possibleOutcomes, setUserData]);
 
+  const compatibilityQs = [];
+  const conversationQs = [];
+
+  for (const item in quizData) {
+    if (quizData[item].type !== "noEffect") {
+      compatibilityQs.push(quizData[item]);
+    } else {
+      conversationQs.push(quizData[item]);
+    }
+  }
+
+  console.log(compatibilityQs);
+  console.log(conversationQs);
+
   return (
     <div className={styles.container}>
       <h1>{userData.name}'s Result</h1>
       <h2>{userData.daterType}</h2>
       {/* Image goes here */}
-      <p className="description">{description}</p>
+      <p className={styles.description}>{description}</p>
+      <div>
+        <h3>All answers</h3>
+        <h4 className={styles.questionHeader}>Compatibility Questions</h4>
+        <ul>
+          {compatibilityQs.map((item) => (
+            <li key={item.key}>
+              <p className={styles.question}>{item.question}</p>
+              <p className={styles.answer}>{item.answer}</p>
+            </li>
+          ))}
+        </ul>
+        <h4 className={styles.questionHeader}>Conversation Starters</h4>
+        <ul>
+          {conversationQs.map((item) => (
+            <li key={item.key}>
+              <p className={styles.question}>{item.question}</p>
+              <p className={styles.answer}>{item.answer}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
