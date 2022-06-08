@@ -9,6 +9,8 @@ const Results = () => {
 
   const [daterType, setDaterType] = useState("");
   const [description, setDescription] = useState("");
+  const [compatibilityQs, setCompatibilityQs] = useState([]);
+  const [conversationQs, setConversationQs] = useState([]);
 
   useEffect(() => {
     const descriptions = {
@@ -19,8 +21,6 @@ const Results = () => {
     };
 
     let highestCount = 0;
-
-    console.log(possibleOutcomes);
 
     for (const type in possibleOutcomes) {
       if (possibleOutcomes[type] > highestCount) {
@@ -40,21 +40,21 @@ const Results = () => {
       newState.quizComplete = true;
       return newState;
     });
-  }, [daterType, possibleOutcomes, setUserData]);
 
-  const compatibilityQs = [];
-  const conversationQs = [];
+    const compArr = [];
+    const convArr = [];
 
-  for (const item in quizData) {
-    if (quizData[item].type !== "noEffect") {
-      compatibilityQs.push(quizData[item]);
-    } else {
-      conversationQs.push(quizData[item]);
+    for (const item in quizData) {
+      if (quizData[item].type !== "noEffect") {
+        compArr.push(quizData[item]);
+      } else {
+        convArr.push(quizData[item]);
+      }
     }
-  }
 
-  console.log(compatibilityQs);
-  console.log(conversationQs);
+    setCompatibilityQs(compArr);
+    setConversationQs(convArr);
+  }, [daterType, possibleOutcomes, setUserData, quizData]);
 
   return (
     <div className={styles.container}>
