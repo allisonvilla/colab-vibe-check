@@ -25,12 +25,12 @@ const Results = () => {
       }
     }
 
-    setQuizData((prevState) => {
+    setUserData((prevState) => {
       let newState = { ...prevState };
-      newState.finalType = daterType;
+      newState.daterType = daterType;
       return newState;
     });
-  }, [daterType, possibleOutcomes, setQuizData]);
+  }, [daterType, possibleOutcomes, setUserData]);
 
   return (
     <div className={styles.container}>

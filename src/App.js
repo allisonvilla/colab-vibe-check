@@ -14,11 +14,11 @@ function App() {
     name: `Onyinye`,
     age: 24,
     showResults: true,
-    quizComplete: false
+    quizComplete: false,
+    daterType: null // User's determined dater type - set in Results.js
   };
 
   const defaultQuiz = {
-    finalType: null, // User's determined dater type - set in Results.js
     q1: {
       // These values are set in VibeQuestionComponent.js
       question: null, // Question asked
