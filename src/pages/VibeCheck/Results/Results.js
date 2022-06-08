@@ -17,7 +17,7 @@ const Results = () => {
       seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
       casualDater: `This is a description for casual daters.`,
       goWithTheFlow: `This is a description for go with the flow.`,
-      workingOnMyself: `This is a description for working on myself`
+      workingOnMyself: `This is a description for working on myself.`
     };
 
     let highestCount = 0;
@@ -37,7 +37,6 @@ const Results = () => {
     setUserData((prevState) => {
       let newState = { ...prevState };
       newState.daterType = daterType;
-      newState.quizComplete = true;
       return newState;
     });
 
@@ -86,5 +85,9 @@ const Results = () => {
     </div>
   );
 };
+
+// TODO:
+// Way for user to change the 'show' property in quizData
+// Fix the tie logic
 
 export default Results;

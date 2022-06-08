@@ -14,11 +14,11 @@ function App() {
     name: `Onyinye`,
     age: 24,
     showResults: true,
-    quizComplete: false,
-    daterType: null // User's determined dater type - set in Results.js
+    daterType: null
   };
 
   const defaultQuiz = {
+    // Compatibility questions (q1-q4)
     q1: {
       // These values are set in VibeQuestionComponent.js
       question: null, // Question asked
@@ -48,7 +48,7 @@ function App() {
       show: true,
       key: 4
     },
-    // Questions 5-10 are the only ones that may get shown on user's profile
+    // Conversation starters (q5-q10)
     q5: {
       question: null,
       answer: null,
