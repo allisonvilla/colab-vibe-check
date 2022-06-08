@@ -27,7 +27,7 @@ const Results = () => {
 
     setQuizData((prevState) => {
       let newState = { ...prevState };
-      newState.type = daterType;
+      newState.finalType = daterType;
       return newState;
     });
   }, [daterType, possibleOutcomes, setQuizData]);

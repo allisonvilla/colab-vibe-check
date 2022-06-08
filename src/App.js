@@ -18,18 +18,59 @@ function App() {
   };
 
   const defaultQuiz = {
-    type: null,
-    q1: null,
-    q2: null,
-    q3: null,
-    q4: null,
+    finalType: null, // User's determined dater type - set in Results.js
+    q1: {
+      // These values are set in VibeQuestionComponent.js
+      question: null, // Question asked
+      answer: null, // User's answer
+      type: null // Dater type the question affected
+    },
+    q2: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q3: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q4: {
+      question: null,
+      answer: null,
+      type: null
+    },
     // Questions 5-10 are the only ones that may get shown on user's profile
-    q5: null,
-    q6: null,
-    q7: null,
-    q8: null,
-    q9: null,
-    q10: null
+    q5: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q6: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q7: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q8: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q9: {
+      question: null,
+      answer: null,
+      type: null
+    },
+    q10: {
+      question: null,
+      answer: null,
+      type: null
+    }
   };
 
   const [userData, setUserData] = React.useState(defaultUser);
