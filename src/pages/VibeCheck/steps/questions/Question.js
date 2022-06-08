@@ -8,7 +8,7 @@ import { VibeQuestionComponent } from "components/VibeQuestionComponent/VibeQues
 import questionBank from "./questionBank";
 
 function Index(props) {
-  const userContext = useContext(UserContext);
+  const { userData } = useContext(UserContext);
   const { dispatch } = useVibeCheckContext();
   const { consistent, random } = questionBank;
 
@@ -41,12 +41,12 @@ function Index(props) {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.headerRow}>
-          <div className={styles.left}>{userContext.userData.name}</div>
+          <div className={styles.left}>{userData.name}</div>
           <button className={styles.right} onClick={() => dispatch({ type: `STEP1` })}>
             <ReturnBtn /> Return
           </button>
         </div>
-        <div className={styles.age}>{userContext.userData.age}</div>
+        <div className={styles.age}>{userData.age}</div>
         <VibeQuestionComponent {...{ progress, question, options, nextScreen }} />
       </div>
     </div>

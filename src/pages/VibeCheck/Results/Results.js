@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 const Results = () => {
-  const { setQuizData } = useContext(UserContext);
+  const { setQuizData, quizData, setUserData, userData } = useContext(UserContext);
   const { possibleOutcomes } = useContext(VibeCheckContext);
 
   const [daterType, setDaterType] = useState("");
