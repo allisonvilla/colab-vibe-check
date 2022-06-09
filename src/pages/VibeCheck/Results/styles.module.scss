@@ -20,6 +20,10 @@
         font-size: 1rem; 
     }
 
+    h4 {
+        display: inline; 
+    }
+
     p {
         font-size: 1rem; 
     }
@@ -27,4 +31,8 @@
 
 .collapsed {
     display: none; 
+}
+
+.test {
+    background-color: red; 
 }
