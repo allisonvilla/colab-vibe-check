@@ -15,18 +15,18 @@ const Results = () => {
   const [conversationQs, setConversationQs] = useState([]);
 
   useEffect(() => {
-    const descriptions = {
-      seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
-      casualDater: `This is a description for casual daters.`,
-      goWithTheFlow: `This is a description for go with the flow.`,
-      workingOnMyself: `This is a description for working on myself.`
-    };
-
     const results = {
       seriousDater: `You are a serious dater!`,
       casualDater: `You are a casual dater!`,
       goWithTheFlow: `You are a "Go with the flow" dater!`,
       workingOnMyself: `You are working on yourself!`
+    };
+
+    const descriptions = {
+      seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
+      casualDater: `You're not looking for anything serious, you just want to have some fun.`,
+      goWithTheFlow: `You're someone who is open to seeing where things go (open to casual or serious dating depending on the person).`,
+      workingOnMyself: `You're someone who prioritizes their own life over dating someone new at the moment.`
     };
 
     let highestCount = 0;
