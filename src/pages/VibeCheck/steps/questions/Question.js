@@ -20,10 +20,7 @@ function Index(props) {
     } else {
       dispatch({ type: `STEP${progress + 3}` });
     }
-    console.log("nextScreen dispatch");
   };
-
-  console.log(progress);
 
   let question;
   let options;
