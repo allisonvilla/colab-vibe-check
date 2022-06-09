@@ -11,6 +11,8 @@ const Results = () => {
 
   const [description, setDescription] = useState("");
   const [sentence, setSentence] = useState("");
+  const [compCollapsed, setCompCollapsed] = useState(true);
+  const [convCollapsed, setConvCollapsed] = useState(true);
   const [compatibilityQs, setCompatibilityQs] = useState([]);
   const [conversationQs, setConversationQs] = useState([]);
 
@@ -63,6 +65,14 @@ const Results = () => {
     setConversationQs(convArr);
   }, [daterType, possibleOutcomes, setUserData, quizData]);
 
+  const handleCompClick = () => {
+    setCompCollapsed(!compCollapsed);
+  };
+
+  const handleConvClick = () => {
+    setConvCollapsed(!convCollapsed);
+  };
+
   return (
     <div className={styles.container}>
       <h1>Your Quiz Result</h1>
@@ -70,8 +80,9 @@ const Results = () => {
       {/* Image goes here */}
       <p className={styles.description}>{description}</p>
       <div>
-        <ul>
-          <h4 className={styles.questionHeader}>Compatibility Questions</h4>
+        <h4 className={styles.questionHeader}>Compatibility Questions</h4>
+        <button onClick={handleCompClick}>x</button>
+        <ul className={compCollapsed ? styles.collapsed : null}>
           {compatibilityQs.map((item) => (
             <li key={item.key}>
               <p className={styles.question}>{item.question}</p>
@@ -79,8 +90,9 @@ const Results = () => {
             </li>
           ))}
         </ul>
-        <ul>
-          <h4 className={styles.questionHeader}>Conversation Starters</h4>
+        <h4 className={styles.questionHeader}>Conversation Starters</h4>
+        <button onClick={handleConvClick}>x</button>
+        <ul className={convCollapsed ? styles.collapsed : null}>
           {conversationQs.map((item) => (
             <li key={item.key}>
               <p className={styles.question}>{item.question}</p>

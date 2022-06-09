@@ -342,3 +342,7 @@ body {
 .container p {
   font-size: 1rem;
 }
+
+.collapsed {
+  display: none;
+}
