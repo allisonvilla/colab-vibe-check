@@ -65,9 +65,9 @@ const Results = () => {
             .replace(/([a-z])([A-Z])/g, "$1 $2")
             .replace(/^./, (str) => str.toUpperCase())}
         </h1>
-        {userData.daterType ? (
-          <img src={images[userData.daterType].path} alt={images[userData.daterType].alt} />
-        ) : null}
+
+        <img src={images[userData.daterType].path} alt={images[userData.daterType].alt} />
+
         <p className={styles.description}>{userData.daterDesc}</p>
         <div>
           <h4 className={styles.questionHeader}>Compatibility Questions</h4>
