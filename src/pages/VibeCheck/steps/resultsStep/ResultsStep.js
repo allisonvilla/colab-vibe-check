@@ -41,7 +41,7 @@ const ResultsStep = () => {
   if (userData.daterType && userData.daterDesc) {
     return <Results />;
   } else {
-    return <h1>Loading Results</h1>;
+    return <></>;
   }
 };
 

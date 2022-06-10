@@ -5,6 +5,7 @@ const Home = lazy(() => import("pages/Home/Home"));
 const About = lazy(() => import("pages/About/About"));
 const UserProfile = lazy(() => import("pages/UserProfile/UserProfile"));
 const VibeCheck = lazy(() => import("pages/VibeCheck/VibeCheck"));
+const Results = lazy(() => import("pages/Results/Results"));
 
 const routes = [
   {
@@ -26,6 +27,11 @@ const routes = [
     path: "/vibecheck",
     exact: true,
     component: VibeCheck
+  },
+  {
+    path: "/myresults",
+    exact: true,
+    component: Results
   },
   {
     path: "*",

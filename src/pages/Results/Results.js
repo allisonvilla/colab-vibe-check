@@ -1,5 +1,6 @@
 import { UserContext } from "App";
 import { useContext, useEffect, useState } from "react";
+import { Navigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 const Results = () => {
@@ -53,54 +54,58 @@ const Results = () => {
     }
   };
 
-  return (
-    <div className={styles.container}>
-      <h2>Your dater type result is:</h2>
-      <h1>
-        {userData.daterType
-          .replace(/([a-z])([A-Z])/g, "$1 $2")
-          .replace(/^./, (str) => str.toUpperCase())}
-      </h1>
-      {userData.daterType ? (
-        <img src={images[userData.daterType].path} alt={images[userData.daterType].alt} />
-      ) : null}
-      <p className={styles.description}>{userData.daterDesc}</p>
-      <div>
-        <h4 className={styles.questionHeader}>Compatibility Questions</h4>
-        <button
-          onClick={() => {
-            handleExpand("compatibility");
-          }}
-        >
-          x
-        </button>
-        <ul className={compCollapsed ? styles.collapsed : null}>
-          {compatibilityQs.map((item) => (
-            <li key={item.key}>
-              <p className={styles.question}>{item.question}</p>
-              <p className={styles.answer}>{item.answer}</p>
-            </li>
-          ))}
-        </ul>
-        <h4 className={styles.questionHeader}>Conversation Starters</h4>
-        <button
-          onClick={() => {
-            handleExpand("conversation");
-          }}
-        >
-          x
-        </button>
-        <ul className={convCollapsed ? styles.collapsed : null}>
-          {conversationQs.map((item) => (
-            <li key={item.key}>
-              <p className={styles.question}>{item.question}</p>
-              <p className={styles.answer}>{item.answer}</p>
-            </li>
-          ))}
-        </ul>
+  if (!userData.daterType || !userData.daterDesc) {
+    return <Navigate to="/vibecheck" />;
+  } else {
+    return (
+      <div className={styles.container}>
+        <h2>Your dater type result is:</h2>
+        <h1>
+          {userData.daterType
+            .replace(/([a-z])([A-Z])/g, "$1 $2")
+            .replace(/^./, (str) => str.toUpperCase())}
+        </h1>
+        {userData.daterType ? (
+          <img src={images[userData.daterType].path} alt={images[userData.daterType].alt} />
+        ) : null}
+        <p className={styles.description}>{userData.daterDesc}</p>
+        <div>
+          <h4 className={styles.questionHeader}>Compatibility Questions</h4>
+          <button
+            onClick={() => {
+              handleExpand("compatibility");
+            }}
+          >
+            x
+          </button>
+          <ul className={compCollapsed ? styles.collapsed : null}>
+            {compatibilityQs.map((item) => (
+              <li key={item.key}>
+                <p className={styles.question}>{item.question}</p>
+                <p className={styles.answer}>{item.answer}</p>
+              </li>
+            ))}
+          </ul>
+          <h4 className={styles.questionHeader}>Conversation Starters</h4>
+          <button
+            onClick={() => {
+              handleExpand("conversation");
+            }}
+          >
+            x
+          </button>
+          <ul className={convCollapsed ? styles.collapsed : null}>
+            {conversationQs.map((item) => (
+              <li key={item.key}>
+                <p className={styles.question}>{item.question}</p>
+                <p className={styles.answer}>{item.answer}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
 export default Results;
