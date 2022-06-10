@@ -70,14 +70,16 @@ const Results = () => {
 
         <p className={styles.description}>{userData.daterDesc}</p>
         <div>
-          <h4 className={styles.questionHeader}>Compatibility Questions</h4>
-          <button
-            onClick={() => {
-              handleExpand("compatibility");
-            }}
-          >
-            x
-          </button>
+          <div className={styles.questionHeader}>
+            <h4>Compatibility Questions</h4>
+            <button
+              onClick={() => {
+                handleExpand("compatibility");
+              }}
+            >
+              {compCollapsed ? `+` : `-`}
+            </button>
+          </div>
           <ul className={compCollapsed ? styles.collapsed : null}>
             {compatibilityQs.map((item) => (
               <li key={item.key}>
@@ -86,14 +88,16 @@ const Results = () => {
               </li>
             ))}
           </ul>
-          <h4 className={styles.questionHeader}>Conversation Starters</h4>
-          <button
-            onClick={() => {
-              handleExpand("conversation");
-            }}
-          >
-            x
-          </button>
+          <div className={styles.questionHeader}>
+            <h4>Conversation Starters</h4>
+            <button
+              onClick={() => {
+                handleExpand("conversation");
+              }}
+            >
+              {convCollapsed ? `+` : `-`}
+            </button>
+          </div>
           <ul className={convCollapsed ? styles.collapsed : null}>
             {conversationQs.map((item) => (
               <li key={item.key}>
