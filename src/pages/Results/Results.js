@@ -1,6 +1,6 @@
 import { UserContext } from "App";
 import { useContext, useEffect, useState } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 const Results = () => {
@@ -38,19 +38,19 @@ const Results = () => {
   const images = {
     seriousDater: {
       path: require("../../assets/results/seriousDater.png"),
-      alt: "fkdsgjfkljgdj"
+      alt: "A man proposing to a woman."
     },
     casualDater: {
       path: require("../../assets/results/casualDater.png"),
-      alt: "some of the things a lot"
+      alt: "A couple sitting on the couch while cheering."
     },
     goWithTheFlow: {
       path: require("../../assets/results/goWithTheFlow.png"),
-      alt: "picture of people"
+      alt: "A couple enjoying a picnic in the sun."
     },
     workingOnMyself: {
       path: require("../../assets/results/workingOnMyself.png"),
-      alt: "I hate this"
+      alt: "Woman sitting on a chair, reading a book."
     }
   };
 
@@ -69,7 +69,9 @@ const Results = () => {
         <img src={images[userData.daterType].path} alt={images[userData.daterType].alt} />
 
         <p className={styles.description}>{userData.daterDesc}</p>
-        <div>
+        <p className={styles.instruction}>Add your answers to your profile below!</p>
+
+        <div className={styles.questionSection}>
           <div className={styles.questionHeader}>
             <h4>Compatibility Questions</h4>
             <button
@@ -88,6 +90,9 @@ const Results = () => {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className={styles.questionSection}>
           <div className={styles.questionHeader}>
             <h4>Conversation Starters</h4>
             <button
@@ -106,6 +111,12 @@ const Results = () => {
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className={styles.addAnswers}>
+          <p>Note: Selected answers will be added to profile</p>
+          <button>Add answers to profile {">>"}</button>
+          <Link to="/">Cancel</Link>
         </div>
       </div>
     );
