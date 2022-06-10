@@ -25,28 +25,28 @@ function App() {
       question: null, // Question asked
       answer: null, // User's answer
       type: null, // Dater type the question affected
-      show: true, // Whether or not the user chooses to show this answer
+      show: false, // Whether or not the user chooses to show this answer
       key: 1
     },
     q2: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 2
     },
     q3: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 3
     },
     q4: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 4
     },
     // Conversation starters (q5-q10)
@@ -54,42 +54,42 @@ function App() {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 5
     },
     q6: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 6
     },
     q7: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 7
     },
     q8: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 8
     },
     q9: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 9
     },
     q10: {
       question: null,
       answer: null,
       type: null,
-      show: true,
+      show: false,
       key: 10
     }
   };

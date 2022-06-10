@@ -4,7 +4,7 @@ import { Navigate, Link } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 const Results = () => {
-  const { quizData, userData } = useContext(UserContext);
+  const { quizData, setQuizData, userData } = useContext(UserContext);
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
@@ -51,6 +51,16 @@ const Results = () => {
         return newState;
       });
     }
+  };
+
+  const saveSelected = () => {
+    setQuizData((prevState) => {
+      let newState = { ...prevState };
+      selectedAnswers.forEach((ans) => {
+        newState[`q${ans.key}`].show = true;
+      });
+      return newState;
+    });
   };
 
   const images = {
@@ -149,7 +159,7 @@ const Results = () => {
 
         <div className={styles.addAnswers}>
           <p>Note: Selected answers will be added to profile</p>
-          <button>Add answers to profile {">>"}</button>
+          <button onClick={saveSelected}>Add answers to profile {">>"}</button>
           <Link to="/">Cancel</Link>
         </div>
       </div>
