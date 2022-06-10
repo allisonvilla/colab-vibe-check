@@ -10,6 +10,7 @@ const Results = () => {
   const [daterType, setDaterType] = useState("");
 
   const [description, setDescription] = useState("");
+  const [imgSrc, setImgSrc] = useState("");
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
@@ -59,12 +60,12 @@ const Results = () => {
     setConversationQs(convArr);
   }, [daterType, possibleOutcomes, setUserData, quizData]);
 
-  const handleCompClick = () => {
-    setCompCollapsed(!compCollapsed);
-  };
-
-  const handleConvClick = () => {
-    setConvCollapsed(!convCollapsed);
+  const handleExpand = (list) => {
+    if (list === "compatibility") {
+      setCompCollapsed(!compCollapsed);
+    } else if (list === "conversation") {
+      setConvCollapsed(!convCollapsed);
+    }
   };
 
   return (
@@ -75,7 +76,13 @@ const Results = () => {
       <p className={styles.description}>{description}</p>
       <div>
         <h4 className={styles.questionHeader}>Compatibility Questions</h4>
-        <button onClick={handleCompClick}>x</button>
+        <button
+          onClick={() => {
+            handleExpand("compatibility");
+          }}
+        >
+          x
+        </button>
         <ul className={compCollapsed ? styles.collapsed : null}>
           {compatibilityQs.map((item) => (
             <li key={item.key}>
@@ -85,7 +92,13 @@ const Results = () => {
           ))}
         </ul>
         <h4 className={styles.questionHeader}>Conversation Starters</h4>
-        <button onClick={handleConvClick}>x</button>
+        <button
+          onClick={() => {
+            handleExpand("conversation");
+          }}
+        >
+          x
+        </button>
         <ul className={convCollapsed ? styles.collapsed : null}>
           {conversationQs.map((item) => (
             <li key={item.key}>
