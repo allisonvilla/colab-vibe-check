@@ -1,14 +1,9 @@
 import { UserContext } from "App";
-import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import { useContext, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 const Results = () => {
-  const { setQuizData, quizData, setUserData } = useContext(UserContext);
-  const { possibleOutcomes } = useContext(VibeCheckContext);
-
-  const [daterType, setDaterType] = useState("");
-  const [description, setDescription] = useState("");
+  const { quizData, userData } = useContext(UserContext);
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
@@ -16,31 +11,6 @@ const Results = () => {
   const [conversationQs, setConversationQs] = useState([]);
 
   useEffect(() => {
-    const descriptions = {
-      seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
-      casualDater: `You're not looking for anything serious, you just want to have some fun.`,
-      goWithTheFlow: `You're someone who is open to seeing where things go (open to casual or serious dating depending on the person).`,
-      workingOnMyself: `You're someone who prioritizes their own life over dating someone new at the moment.`
-    };
-
-    let highestCount = 0;
-
-    for (const type in possibleOutcomes) {
-      if (possibleOutcomes[type] > highestCount) {
-        highestCount = possibleOutcomes[type];
-        setDescription(descriptions[type]);
-        setDaterType(type);
-      }
-      //   } else if (possibleOutcomes[type] === highestCount) {
-      //     daterType = "Go With The Flow";
-    }
-
-    setUserData((prevState) => {
-      let newState = { ...prevState };
-      newState.daterType = daterType;
-      return newState;
-    });
-
     const compArr = [];
     const convArr = [];
 
@@ -54,7 +24,7 @@ const Results = () => {
 
     setCompatibilityQs(compArr);
     setConversationQs(convArr);
-  }, [daterType, possibleOutcomes, setUserData, quizData]);
+  }, [quizData]);
 
   const handleExpand = (list) => {
     if (list === "compatibility") {
@@ -66,19 +36,19 @@ const Results = () => {
 
   const images = {
     seriousDater: {
-      path: require("../../../assets/results/seriousDater.png"),
+      path: require("../../assets/results/seriousDater.png"),
       alt: "fkdsgjfkljgdj"
     },
     casualDater: {
-      path: require("../../../assets/results/casualDater.png"),
+      path: require("../../assets/results/casualDater.png"),
       alt: "some of the things a lot"
     },
     goWithTheFlow: {
-      path: require("../../../assets/results/goWithTheFlow.png"),
+      path: require("../../assets/results/goWithTheFlow.png"),
       alt: "picture of people"
     },
     workingOnMyself: {
-      path: require("../../../assets/results/workingOnMyself.png"),
+      path: require("../../assets/results/workingOnMyself.png"),
       alt: "I hate this"
     }
   };
@@ -87,10 +57,14 @@ const Results = () => {
     <div className={styles.container}>
       <h2>Your dater type result is:</h2>
       <h1>
-        {daterType.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())}
+        {userData.daterType
+          .replace(/([a-z])([A-Z])/g, "$1 $2")
+          .replace(/^./, (str) => str.toUpperCase())}
       </h1>
-      {daterType ? <img src={images[daterType].path} alt={images[daterType].alt} /> : null}
-      <p className={styles.description}>{description}</p>
+      {userData.daterType ? (
+        <img src={images[userData.daterType].path} alt={images[userData.daterType].alt} />
+      ) : null}
+      <p className={styles.description}>{userData.daterDesc}</p>
       <div>
         <h4 className={styles.questionHeader}>Compatibility Questions</h4>
         <button
@@ -128,9 +102,5 @@ const Results = () => {
     </div>
   );
 };
-
-// TODO:
-// Way for user to change the 'show' property in quizData
-// Fix the tie logic
 
 export default Results;

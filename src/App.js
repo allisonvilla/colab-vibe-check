@@ -14,7 +14,8 @@ function App() {
     name: `Onyinye`,
     age: 24,
     showResults: true,
-    daterType: null
+    daterType: null,
+    daterDesc: null
   };
 
   const defaultQuiz = {

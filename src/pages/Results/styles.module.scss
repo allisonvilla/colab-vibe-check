@@ -1,7 +1,7 @@
-@import "../../..//sass/main.scss";
+@import "../..//sass/main.scss";
 
 .container {
-    @include flexmiddle; 
+    @include flexmiddle;
     width: 100%;
     position: relative;
     min-height: 700px;
@@ -11,24 +11,24 @@
     align-items: center;
 
     h1 {
-        line-height: 55px; 
+        line-height: 55px;
         text-align: center;
-        font-size: 1.625rem; 
+        font-size: 1.625rem;
     }
 
     h2 {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
     h4 {
-        display: inline; 
+        display: inline;
     }
 
     p {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 }
 
 .collapsed {
-    display: none; 
+    display: none;
 }
