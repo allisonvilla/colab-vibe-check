@@ -106,22 +106,22 @@ const questionBank = {
       options: [
         {
           option: "Have a video or phone call.",
-          value: "noEffect",
+          value: "q5",
           weight: 0
         },
         {
           option: "Keep chatting on the app for some time.",
-          value: "noEffect",
+          value: "q5",
           weight: 0
         },
         {
           option: "Meet them in person.",
-          value: "noEffect",
+          value: "q5",
           weight: 0
         },
         {
           option: "Continue talking on another platform.",
-          value: "noEffect",
+          value: "q5",
           weight: 0
         }
       ]

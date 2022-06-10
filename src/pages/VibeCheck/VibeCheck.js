@@ -9,7 +9,8 @@ const initialvalues = {
   casualDater: 0,
   goWithTheFlow: 0,
   workingOnMyself: 0,
-  noEffect: 0 // this tally is used by questions that do not affect dater type score
+  noEffect: 0, // this tally is used by questions that do not affect dater type score
+  q5: 0 // special value for question 5, which neither affects score nor is a conversation starter
 };
 
 const Index = () => {
