@@ -37,7 +37,7 @@ const Results = () => {
     }
   };
 
-  const handleCheck = (ans) => {
+  const handleSelect = (ans) => {
     if (selectedAnswers.includes(ans)) {
       setSelectedAnswers((prevState) => {
         let newState = [...prevState];
@@ -106,10 +106,10 @@ const Results = () => {
               <li key={item.key}>
                 <button
                   onClick={() => {
-                    handleCheck(item);
+                    handleSelect(item);
                   }}
                 >
-                  x
+                  {selectedAnswers.includes(item) ? `checked` : `unchecked`}
                 </button>
                 <p className={styles.question}>{item.question}</p>
                 <p className={styles.answer}>{item.answer}</p>
@@ -135,10 +135,10 @@ const Results = () => {
               <li key={item.key}>
                 <button
                   onClick={() => {
-                    handleCheck(item);
+                    handleSelect(item);
                   }}
                 >
-                  x
+                  {selectedAnswers.includes(item) ? `checked` : `unchecked`}
                 </button>
                 <p className={styles.question}>{item.question}</p>
                 <p className={styles.answer}>{item.answer}</p>
