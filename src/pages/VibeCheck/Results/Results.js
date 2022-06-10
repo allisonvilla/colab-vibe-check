@@ -10,7 +10,6 @@ const Results = () => {
   const [daterType, setDaterType] = useState("");
 
   const [description, setDescription] = useState("");
-  const [imgSrc, setImgSrc] = useState("");
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
@@ -31,12 +30,10 @@ const Results = () => {
       if (possibleOutcomes[type] > highestCount) {
         highestCount = possibleOutcomes[type];
         setDescription(descriptions[type]);
-        setDaterType(
-          type.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())
-        );
-        //   } else if (possibleOutcomes[type] === highestCount) {
-        //     daterType = "Go With The Flow";
+        setDaterType(type);
       }
+      //   } else if (possibleOutcomes[type] === highestCount) {
+      //     daterType = "Go With The Flow";
     }
 
     setUserData((prevState) => {
@@ -68,11 +65,32 @@ const Results = () => {
     }
   };
 
+  const images = {
+    seriousDater: {
+      path: require("./seriousDater.png"),
+      alt: "fkdsgjfkljgdj"
+    },
+    casualDater: {
+      path: require("./casualDater.png"),
+      alt: "some of the things a lot"
+    },
+    goWithTheFlow: {
+      path: require("./goWithTheFlow.png"),
+      alt: "picture of people"
+    },
+    workingOnMyself: {
+      path: require("./workingOnMyself.png"),
+      alt: "I hate this"
+    }
+  };
+
   return (
     <div className={styles.container}>
       <h2>Your dater type result is:</h2>
-      <h1>{userData.daterType}</h1>
-      {/* Image goes here */}
+      <h1>
+        {daterType.replace(/([a-z])([A-Z])/g, "$1 $2").replace(/^./, (str) => str.toUpperCase())}
+      </h1>
+      {daterType ? <img src={images[daterType].path} alt={images[daterType].alt} /> : null}
       <p className={styles.description}>{description}</p>
       <div>
         <h4 className={styles.questionHeader}>Compatibility Questions</h4>
