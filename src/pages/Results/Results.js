@@ -54,13 +54,23 @@ const Results = () => {
   };
 
   const saveSelected = () => {
-    setQuizData((prevState) => {
-      let newState = { ...prevState };
-      selectedAnswers.forEach((ans) => {
-        newState[`q${ans.key}`].show = true;
-      });
-      return newState;
-    });
+    for (const q in quizData) {
+      if (selectedAnswers.includes(quizData[q])) {
+        setQuizData((prevState) => {
+          let newState = { ...prevState };
+          selectedAnswers.forEach((ans) => {
+            newState[`q${ans.key}`].show = true;
+          });
+          return newState;
+        });
+      } else {
+        setQuizData((prevState) => {
+          let newState = { ...prevState };
+          newState[q].show = false;
+          return newState;
+        });
+      }
+    }
   };
 
   const images = {
