@@ -11,6 +11,8 @@ const Results = () => {
   const [compatibilityQs, setCompatibilityQs] = useState([]);
   const [conversationQs, setConversationQs] = useState([]);
 
+  const [selectedAnswers, setSelectedAnswers] = useState([]);
+
   useEffect(() => {
     const compArr = [];
     const convArr = [];
@@ -35,6 +37,22 @@ const Results = () => {
     }
   };
 
+  const handleCheck = (ans) => {
+    if (selectedAnswers.includes(ans)) {
+      setSelectedAnswers((prevState) => {
+        let newState = [...prevState];
+        let filteredArr = newState.filter((i) => i !== ans);
+        return filteredArr;
+      });
+    } else {
+      setSelectedAnswers((prevState) => {
+        let newState = [...prevState];
+        newState.push(ans);
+        return newState;
+      });
+    }
+  };
+
   const images = {
     seriousDater: {
       path: require("../../assets/results/seriousDater.png"),
@@ -45,11 +63,11 @@ const Results = () => {
       alt: "A couple sitting on the couch while cheering."
     },
     goWithTheFlow: {
-      path: require("../../assets/results/goWithTheFlow.png"),
+      path: require("../../assets/results/goWithTheFlow.png"), // missing
       alt: "A couple enjoying a picnic in the sun."
     },
     workingOnMyself: {
-      path: require("../../assets/results/workingOnMyself.png"),
+      path: require("../../assets/results/workingOnMyself.png"), // missing
       alt: "Woman sitting on a chair, reading a book."
     }
   };
@@ -83,8 +101,16 @@ const Results = () => {
             </button>
           </div>
           <ul className={compCollapsed ? styles.collapsed : null}>
+            <button>Select All</button>
             {compatibilityQs.map((item) => (
               <li key={item.key}>
+                <button
+                  onClick={() => {
+                    handleCheck(item);
+                  }}
+                >
+                  x
+                </button>
                 <p className={styles.question}>{item.question}</p>
                 <p className={styles.answer}>{item.answer}</p>
               </li>
@@ -104,8 +130,16 @@ const Results = () => {
             </button>
           </div>
           <ul className={convCollapsed ? styles.collapsed : null}>
+            <button>Select All</button>
             {conversationQs.map((item) => (
               <li key={item.key}>
+                <button
+                  onClick={() => {
+                    handleCheck(item);
+                  }}
+                >
+                  x
+                </button>
                 <p className={styles.question}>{item.question}</p>
                 <p className={styles.answer}>{item.answer}</p>
               </li>
