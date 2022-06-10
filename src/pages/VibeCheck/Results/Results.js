@@ -4,11 +4,10 @@ import { useContext, useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 
 const Results = () => {
-  const { setQuizData, quizData, setUserData, userData } = useContext(UserContext);
+  const { setQuizData, quizData, setUserData } = useContext(UserContext);
   const { possibleOutcomes } = useContext(VibeCheckContext);
 
   const [daterType, setDaterType] = useState("");
-
   const [description, setDescription] = useState("");
 
   const [compCollapsed, setCompCollapsed] = useState(true);
@@ -67,19 +66,19 @@ const Results = () => {
 
   const images = {
     seriousDater: {
-      path: require("./seriousDater.png"),
+      path: require("../../../assets/results/seriousDater.png"),
       alt: "fkdsgjfkljgdj"
     },
     casualDater: {
-      path: require("./casualDater.png"),
+      path: require("../../../assets/results/casualDater.png"),
       alt: "some of the things a lot"
     },
     goWithTheFlow: {
-      path: require("./goWithTheFlow.png"),
+      path: require("../../../assets/results/goWithTheFlow.png"),
       alt: "picture of people"
     },
     workingOnMyself: {
-      path: require("./workingOnMyself.png"),
+      path: require("../../../assets/results/workingOnMyself.png"),
       alt: "I hate this"
     }
   };
