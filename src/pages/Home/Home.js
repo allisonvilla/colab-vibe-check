@@ -5,18 +5,26 @@ import { useContext } from "react";
 import { UserContext } from "App";
 
 function Home() {
-  const userContext = useContext(UserContext);
+  const { userData } = useContext(UserContext);
   return (
     <div className={styles.container}>
       <div className={styles.imgWrapper}></div>
 
       <h1>
-        {userContext.userData.name} {userContext.userData.age}
+        {userData.name} {userData.age}
       </h1>
 
-      <Link to="/vibecheck" className={styles.vibeCheckBtn}>
-        Vibe Check
-      </Link>
+      <div className={styles.divider}></div>
+
+      {userData.daterType ? (
+        <Link to="/myresults" className={styles.resultsBtn}>
+          Vibe Check Results {">>"}
+        </Link>
+      ) : (
+        <Link to="/vibecheck" className={styles.vibeCheckBtn}>
+          Vibe Check {">>"}
+        </Link>
+      )}
 
       <Link to="/myprofile" className={styles.profilePreview}>
         Preview Display Profile{" "}

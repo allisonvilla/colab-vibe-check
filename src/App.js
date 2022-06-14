@@ -13,7 +13,6 @@ function App() {
   const defaultUser = {
     name: `Onyinye`,
     age: 24,
-    showResults: true,
     daterType: null,
     daterDesc: null
   };
