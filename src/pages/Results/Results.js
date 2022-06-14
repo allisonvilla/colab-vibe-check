@@ -141,6 +141,7 @@ const Results = () => {
                 handleExpand("compatibility");
               }}
             >
+              {/* need assets */}
               {compCollapsed ? `+` : `-`}
             </button>
           </div>
@@ -149,6 +150,7 @@ const Results = () => {
               onClick={() => {
                 handleSelectAll("compatibility");
               }}
+              className={styles.selectAllBtn}
             >
               Select All
             </button>
@@ -159,10 +161,13 @@ const Results = () => {
                     handleSelect(item);
                   }}
                 >
-                  {selectedAnswers.includes(item) ? `checked` : `unchecked`}
+                  {/* need assets */}
+                  {selectedAnswers.includes(item) ? `✅` : `❎`}
                 </button>
-                <p className={styles.question}>{item.question}</p>
-                <p className={styles.answer}>{item.answer}</p>
+                <div className={styles.qa}>
+                  <p className={styles.question}>{item.question}</p>
+                  <p className={styles.answer}>{item.answer}</p>
+                </div>
               </li>
             ))}
           </ul>
@@ -176,6 +181,7 @@ const Results = () => {
                 handleExpand("conversation");
               }}
             >
+              {/* need assets */}
               {convCollapsed ? `+` : `-`}
             </button>
           </div>
@@ -184,6 +190,7 @@ const Results = () => {
               onClick={() => {
                 handleSelectAll("conversation");
               }}
+              className={styles.selectAllBtn}
             >
               Select All
             </button>
@@ -194,10 +201,13 @@ const Results = () => {
                     handleSelect(item);
                   }}
                 >
-                  {selectedAnswers.includes(item) ? `checked` : `unchecked`}
+                  {/* need assets */}
+                  {selectedAnswers.includes(item) ? `✅` : `❎`}
                 </button>
-                <p className={styles.question}>{item.question}</p>
-                <p className={styles.answer}>{item.answer}</p>
+                <div className={styles.qa}>
+                  <p className={styles.question}>{item.question}</p>
+                  <p className={styles.answer}>{item.answer}</p>
+                </div>
               </li>
             ))}
           </ul>
@@ -205,6 +215,7 @@ const Results = () => {
 
         <div className={styles.addAnswers}>
           <p>Note: Selected answers will be added to profile</p>
+          {/* need assets */}
           <button onClick={saveSelected}>Add answers to profile {">>"}</button>
           <Link to="/">Cancel</Link>
         </div>
