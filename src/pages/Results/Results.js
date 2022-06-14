@@ -29,6 +29,16 @@ const Results = () => {
 
     setCompatibilityQs(compArr);
     setConversationQs(convArr);
+
+    for (const q in quizData) {
+      if (quizData[q].show) {
+        setSelectedAnswers((prevState) => {
+          let newState = [...prevState];
+          newState.push(quizData[q]);
+          return newState;
+        });
+      }
+    }
   }, [quizData]);
 
   const handleExpand = (list) => {
