@@ -1,6 +1,6 @@
 import { UserContext } from "App";
 import { useContext, useEffect, useState } from "react";
-import { Navigate, Link } from "react-router-dom";
+import { Navigate, Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 const Results = () => {
@@ -12,6 +12,8 @@ const Results = () => {
   const [conversationQs, setConversationQs] = useState([]);
 
   const [selectedAnswers, setSelectedAnswers] = useState([]);
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const compArr = [];
@@ -216,7 +218,14 @@ const Results = () => {
         <div className={styles.addAnswers}>
           <p>Note: Selected answers will be added to profile</p>
           {/* need assets */}
-          <button onClick={saveSelected}>Add answers to profile {">>"}</button>
+          <button
+            onClick={() => {
+              saveSelected();
+              navigate("/");
+            }}
+          >
+            Add answers to profile {">>"}
+          </button>
           <Link to="/">Cancel</Link>
         </div>
       </div>
