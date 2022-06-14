@@ -49,7 +49,6 @@ function App() {
       show: false,
       key: 4
     },
-    // Conversation starters (q5-q10)
     q5: {
       question: null,
       answer: null,
@@ -57,6 +56,7 @@ function App() {
       show: false,
       key: 5
     },
+    // Conversation starters (q6-q10)
     q6: {
       question: null,
       answer: null,

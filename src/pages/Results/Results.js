@@ -53,6 +53,30 @@ const Results = () => {
     }
   };
 
+  const handleSelectAll = (list) => {
+    if (list === "compatibility") {
+      compatibilityQs.forEach((q) => {
+        if (!selectedAnswers.includes(q)) {
+          setSelectedAnswers((prevState) => {
+            let newState = [...prevState];
+            newState.push(q);
+            return newState;
+          });
+        }
+      });
+    } else if (list === "conversation") {
+      conversationQs.forEach((q) => {
+        if (!selectedAnswers.includes(q)) {
+          setSelectedAnswers((prevState) => {
+            let newState = [...prevState];
+            newState.push(q);
+            return newState;
+          });
+        }
+      });
+    }
+  };
+
   const saveSelected = () => {
     for (const q in quizData) {
       if (selectedAnswers.includes(quizData[q])) {
@@ -121,7 +145,13 @@ const Results = () => {
             </button>
           </div>
           <ul className={compCollapsed ? styles.collapsed : null}>
-            <button>Select All</button>
+            <button
+              onClick={() => {
+                handleSelectAll("compatibility");
+              }}
+            >
+              Select All
+            </button>
             {compatibilityQs.map((item) => (
               <li key={item.key}>
                 <button
@@ -150,7 +180,13 @@ const Results = () => {
             </button>
           </div>
           <ul className={convCollapsed ? styles.collapsed : null}>
-            <button>Select All</button>
+            <button
+              onClick={() => {
+                handleSelectAll("conversation");
+              }}
+            >
+              Select All
+            </button>
             {conversationQs.map((item) => (
               <li key={item.key}>
                 <button
