@@ -19,18 +19,13 @@ const Results = () => {
     const compArr = [];
     const convArr = [];
 
-    for (const item in quizData) {
-      if (quizData[item].type !== "noEffect") {
-        compArr.push(quizData[item]);
-      } else {
-        convArr.push(quizData[item]);
-      }
-    }
-
-    setCompatibilityQs(compArr);
-    setConversationQs(convArr);
-
     for (const q in quizData) {
+      if (quizData[q].type !== "noEffect") {
+        compArr.push(quizData[q]);
+      } else {
+        convArr.push(quizData[q]);
+      }
+
       if (quizData[q].show) {
         setSelectedAnswers((prevState) => {
           let newState = [...prevState];
@@ -39,6 +34,9 @@ const Results = () => {
         });
       }
     }
+
+    setCompatibilityQs(compArr);
+    setConversationQs(convArr);
   }, [quizData]);
 
   const handleExpand = (list) => {
