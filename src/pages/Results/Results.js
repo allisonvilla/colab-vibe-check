@@ -63,28 +63,16 @@ const Results = () => {
     }
   };
 
-  const handleSelectAll = (list) => {
-    if (list === "compatibility") {
-      compatibilityQs.forEach((q) => {
-        if (!selectedAnswers.includes(q)) {
-          setSelectedAnswers((prevState) => {
-            let newState = [...prevState];
-            newState.push(q);
-            return newState;
-          });
-        }
-      });
-    } else if (list === "conversation") {
-      conversationQs.forEach((q) => {
-        if (!selectedAnswers.includes(q)) {
-          setSelectedAnswers((prevState) => {
-            let newState = [...prevState];
-            newState.push(q);
-            return newState;
-          });
-        }
-      });
-    }
+  const handleSelectAll = (arr) => {
+    arr.forEach((q) => {
+      if (!selectedAnswers.includes(q)) {
+        setSelectedAnswers((prevState) => {
+          let newState = [...prevState];
+          newState.push(q);
+          return newState;
+        });
+      }
+    });
   };
 
   const saveSelected = () => {
@@ -158,7 +146,7 @@ const Results = () => {
           <ul className={compCollapsed ? styles.collapsed : null}>
             <button
               onClick={() => {
-                handleSelectAll("compatibility");
+                handleSelectAll(compatibilityQs);
               }}
               className={styles.selectAllBtn}
             >
@@ -198,7 +186,7 @@ const Results = () => {
           <ul className={convCollapsed ? styles.collapsed : null}>
             <button
               onClick={() => {
-                handleSelectAll("conversation");
+                handleSelectAll(conversationQs);
               }}
               className={styles.selectAllBtn}
             >
