@@ -105,23 +105,23 @@ const questionBank = {
       question: "Assuming you met someone you like here, what would be your next preferred step?",
       options: [
         {
-          option: "Learning a specific skill.",
-          value: "noEffect",
+          option: "Have a video or phone call.",
+          value: "q5",
           weight: 0
         },
         {
-          option: "Skydiving.",
-          value: "noEffect",
+          option: "Keep chatting on the app for some time.",
+          value: "q5",
           weight: 0
         },
         {
-          option: "Climbing Mount Everest.",
-          value: "noEffect",
+          option: "Meet them in person.",
+          value: "q5",
           weight: 0
         },
         {
-          option: "Moving to a favourite city.",
-          value: "noEffect",
+          option: "Continue talking on another platform.",
+          value: "q5",
           weight: 0
         }
       ]

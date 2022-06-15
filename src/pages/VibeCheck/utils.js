@@ -1,18 +1,8 @@
 /* eslint-disable indent */
 import Step1 from "./steps/step1/step1";
-// import Q1 from "./steps/questions/Q1";
-// import Q2 from "./steps/questions/Q2";
-// import Q3 from "./steps/questions/Q3";
-// import Q4 from "./steps/questions/Q4";
 import Break from "./steps/questions/Break";
-// import Q6 from "./steps/questions/Q6";
-// import Q5 from "./steps/questions/Q5";
-// import Q7 from "./steps/questions/Q7";
-// import Q8 from "./steps/questions/Q8";
-// import Q9 from "./steps/questions/Q9";
-// import Q10 from "./steps/questions/Q10";
 import Question from "./steps/questions/Question";
-import Results from "./Results/Results";
+import ResultsStep from "./steps/resultsStep/ResultsStep";
 
 export function renderView(state) {
   const { view } = state;
@@ -43,7 +33,7 @@ export function renderView(state) {
     case "step12":
       return <Question progress={10} />;
     case "step13":
-      return <Results />;
+      return <ResultsStep />;
   }
 }
 

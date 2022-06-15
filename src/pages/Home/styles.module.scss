@@ -15,7 +15,7 @@
     color: $header-grey;
     font-size: $default-font-lg;
     font-weight: 600;
-    margin-top: 55px;
+    margin-top: 45px;
     padding-bottom: 10px;
   }
 
@@ -35,7 +35,7 @@
 
 .divider {
   width: 294px;
-  height: 4px;
+  height: 3px;
   left: 67px;
   top: 592px;
   background: rgba(217, 217, 217, 0.27);
@@ -44,16 +44,18 @@
 .vibeCheckBtn {
   @include flexmiddle;
   @include primaryBtnStyle;
-  // width: 245px;
-  // height: 60px;
-  // background: $main-accent;
-  // border-radius: 28px;
-  // color: white;
-  // font-weight: 600;
-  // border: 1px solid $main-accent;
-  // margin-top: 35px;
-  // margin-bottom: 105px;
-  // font-size: calc($default-font-sm + 2px) !important;
+  font-weight: 600;
+  margin-top: 50px;
+}
+
+.resultsBtn {
+  @include flexmiddle;
+  @include primaryBtnStyle;
+  background-color: white;
+  border: 2px solid #f64900;
+  color: #f64900;
+  font-weight: 600;
+  margin-top: 50px;
 }
 
 .profilePreview {
@@ -62,6 +64,7 @@
   flex-direction: row;
   align-items: center;
   font-weight: 500;
+  margin-top: 95px;
 
   img {
     padding-left: 7px;
