@@ -1,9 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
-import { ReactComponent as NavSwipe } from "../../assets/nav-swipe.svg";
-import { ReactComponent as NavMatches } from "../../assets/nav-matches.svg";
-import { ReactComponent as NavProfile } from "../../assets/nav-profile.svg";
+import { ReactComponent as NavSwipe } from "assets/nav-swipe.svg";
+import { ReactComponent as NavMatches } from "assets/nav-matches.svg";
+import { ReactComponent as NavProfile } from "assets/nav-profile.svg";
 
 const NavBar = () => {
   const [swipeColour, setSwipeColour] = useState("");
