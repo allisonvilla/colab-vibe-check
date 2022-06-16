@@ -1,6 +1,6 @@
 import { UserContext } from "App";
 import { useContext, useEffect, useState } from "react";
-import { Navigate, Link, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import styles from "./styles.module.scss";
 
@@ -152,7 +152,6 @@ const Results = () => {
           >
             Back <HiOutlineChevronDoubleRight />
           </button>
-          <Link to="/">Cancel</Link>
         </div>
       </div>
     );
