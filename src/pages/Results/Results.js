@@ -87,7 +87,7 @@ const Results = () => {
                 handleExpand("compatibility");
               }}
             >
-              {convCollapsed ? (
+              {compCollapsed ? (
                 <img src={require("assets/results/plus.png")} alt="Plus icon" />
               ) : (
                 <img src={require("assets/results/minus.png")} alt="Minus icon" />
@@ -95,15 +95,19 @@ const Results = () => {
             </button>
           </div>
           <ul className={compCollapsed ? styles.collapsed : null}>
-            {compatibilityQs.map((item) => (
-              <li key={item.key}>
-                <div className={styles.number}>{compatibilityQs.indexOf(item) + 1}</div>
-                <div className={styles.qa}>
-                  <p className={styles.question}>{item.question}</p>
-                  <p className={styles.answer}>{item.answer}</p>
-                </div>
-              </li>
-            ))}
+            {compatibilityQs.length ? (
+              compatibilityQs.map((item) => (
+                <li key={item.key} className={styles.liNoCheck}>
+                  <div className={styles.number}>{compatibilityQs.indexOf(item) + 1}</div>
+                  <div className={styles.qa}>
+                    <p className={styles.question}>{item.question}</p>
+                    <p className={styles.answer}>{item.answer}</p>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <p className={styles.noAnswer}>You chose not to share any compatibility answers.</p>
+            )}
           </ul>
         </div>
 
@@ -123,21 +127,25 @@ const Results = () => {
             </button>
           </div>
           <ul className={convCollapsed ? styles.collapsed : null}>
-            {conversationQs.map((item) => (
-              <li key={item.key}>
-                <div className={styles.number}>{conversationQs.indexOf(item) + 1}</div>
-                <div className={styles.qa}>
-                  <p className={styles.question}>{item.question}</p>
-                  <p className={styles.answer}>{item.answer}</p>
-                </div>
-              </li>
-            ))}
+            {conversationQs.length ? (
+              conversationQs.map((item) => (
+                <li key={item.key} className={styles.liNoCheck}>
+                  <div className={`${styles.numberConv} ${styles.number}`}>
+                    {conversationQs.indexOf(item) + 1}
+                  </div>
+                  <div className={styles.qa}>
+                    <p className={styles.question}>{item.question}</p>
+                    <p className={styles.answer}>{item.answer}</p>
+                  </div>
+                </li>
+              ))
+            ) : (
+              <p className={styles.noAnswer}>You chose not to share any conversation starters.</p>
+            )}
           </ul>
         </div>
 
         <div className={styles.addAnswers}>
-          <p>Note: Selected answers will be added to profile</p>
-          {/* need assets */}
           <button
             onClick={() => {
               navigate("/");
