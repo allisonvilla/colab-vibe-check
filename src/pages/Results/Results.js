@@ -110,7 +110,7 @@ const Results = () => {
     },
     workingOnMyself: {
       path: require("../../assets/results/workingOnMyself.png"), // missing
-      alt: "Woman sitting on a chair, reading a book."
+      alt: "A woman sitting on a chair, reading a book."
     }
   };
 
