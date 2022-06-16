@@ -13,11 +13,10 @@
       right: 2px;
       width: 380px;
       height: 480px;
-    // border-top-right-radius: 25px;
-    background-image: url("../../../../assets/Rectangle 1052.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-
+      // border-top-right-radius: 25px;
+      background-image: url("../../../../assets/Rectangle 1052.png");
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     .splashImg {
       min-height: 320px;
@@ -45,20 +44,20 @@
             animation: slide-in 1s forwards;
             transform: translateX(100%);
             -webkit-transform: translateX(100%);
-            
+
             @keyframes slide-in {
               100% {
                 transform: translateX(0%);
               }
             }
-            
+
             @-webkit-keyframes slide-in {
               100% {
                 -webkit-transform: translateX(0%);
               }
             }
           }
-          .svgFemale{
+          .svgFemale {
             animation: slide-in 1s forwards;
             transform: translateX(-100%);
             -webkit-transform: translateX(-100%);
@@ -67,7 +66,7 @@
                 transform: translateX(0%);
               }
             }
-            
+
             @-webkit-keyframes slide-in {
               100% {
                 -webkit-transform: translateX(0%);
@@ -108,7 +107,7 @@
     .linkBtn {
       @include flexmiddle;
       @include primaryBtnStyle;
+      margin-top: 100px;
     }
-
   }
 }

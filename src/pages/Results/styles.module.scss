@@ -28,7 +28,7 @@
     color: rgba(0, 0, 0, 0.62);
   }
 
-  img {
+  .resultImage {
     width: 207px;
     align-self: center;
     margin: 20px auto 30px;
@@ -89,7 +89,22 @@
       .question {
         font-weight: 500;
         margin-bottom: 10px;
+        color: #494949;
       }
+
+      .answer {
+        color: rgba(0, 0, 0, 0.62);
+      }
+    }
+
+    :nth-of-type(1).liNoCheck {
+      margin-top: 25px;
+    }
+
+    .noAnswer {
+      margin: 15px;
+      text-align: center;
+      line-height: 1.5rem;
     }
   }
 
@@ -130,6 +145,25 @@
       text-align: center;
       padding: 15px 40px;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.3s;
+
+      svg {
+        margin-left: 5px;
+        transition: 0.9s;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.1);
+
+        svg {
+          transform: translateX(10px);
+        }
+      }
     }
 
     a {
@@ -138,6 +172,24 @@
       color: rgba(0, 0, 0, 0.43);
     }
   }
+}
+
+.number {
+  padding: 20px 15px;
+  background-color: rgba(104, 185, 121, 0.12);
+  width: 35px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: black;
+  margin-right: 1rem;
+}
+
+.numberConv {
+  background-color: rgba(255, 113, 145, 0.12);
 }
 
 .collapsed {
