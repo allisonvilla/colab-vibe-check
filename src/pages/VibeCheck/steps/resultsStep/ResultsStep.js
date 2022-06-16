@@ -35,9 +35,9 @@ const ResultsStep = () => {
         highestCount = possibleOutcomes[type];
         setDaterType(type);
         setDescription(descriptions[type]);
+      } else if (possibleOutcomes[type] === highestCount) {
+        setDaterType("goWithTheFlow");
       }
-      //   } else if (possibleOutcomes[type] === highestCount) {
-      //     daterType = "Go With The Flow";
     }
 
     setUserData((prevState) => {
