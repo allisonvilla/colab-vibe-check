@@ -45,7 +45,11 @@
   @include flexmiddle;
   @include primaryBtnStyle;
   font-weight: 600;
-  margin-top: 50px;
+  margin-top: 110px;
+
+  svg {
+    margin-left: 10px;
+  }
 }
 
 .resultsBtn {
@@ -55,7 +59,11 @@
   border: 2px solid #f64900;
   color: #f64900;
   font-weight: 600;
-  margin-top: 50px;
+  margin-top: 110px;
+
+  svg {
+    margin-left: 12px;
+  }
 }
 
 .profilePreview {

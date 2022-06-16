@@ -3,6 +3,7 @@ import styles from "./styles.module.scss";
 import NavBar from "components/NavBar/NavBar";
 import { useContext } from "react";
 import { UserContext } from "App";
+import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 function Home() {
   const { userData } = useContext(UserContext);
@@ -18,22 +19,13 @@ function Home() {
 
       {userData.daterType ? (
         <Link to="/myresults" className={styles.resultsBtn}>
-          Vibe Check Results {">>"}
+          Vibe Check Results <HiOutlineChevronDoubleRight />
         </Link>
       ) : (
         <Link to="/vibecheck" className={styles.vibeCheckBtn}>
-          Vibe Check {">>"}
+          Vibe Check <HiOutlineChevronDoubleRight />
         </Link>
       )}
-
-      <Link to="/myprofile" className={styles.profilePreview}>
-        Preview Display Profile{" "}
-        <img
-          src={require("../../assets/eye.png")}
-          alt="Eye icon"
-          className={styles.profilePreviewIcon}
-        />
-      </Link>
       <div className={styles.spacer} />
       <NavBar />
     </div>
