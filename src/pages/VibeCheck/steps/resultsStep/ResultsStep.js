@@ -197,8 +197,17 @@ const ResultsStep = () => {
                     handleSelect(item);
                   }}
                 >
-                  {/* need assets */}
-                  {selectedAnswers.includes(item) ? `✅` : `❎`}
+                  {selectedAnswers.includes(item) ? (
+                    <img
+                      src={require("assets/results/checkbox-checked.png")}
+                      alt="Checked checkbox"
+                    />
+                  ) : (
+                    <img
+                      src={require("assets/results/checkbox-empty.png")}
+                      alt="Unchecked checkbox"
+                    />
+                  )}
                 </button>
                 <div className={styles.qa}>
                   <p className={styles.question}>{item.question}</p>
@@ -240,8 +249,17 @@ const ResultsStep = () => {
                     handleSelect(item);
                   }}
                 >
-                  {/* need assets */}
-                  {selectedAnswers.includes(item) ? `✅` : `❎`}
+                  {selectedAnswers.includes(item) ? (
+                    <img
+                      src={require("assets/results/checkbox-checked.png")}
+                      alt="Checked checkbox"
+                    />
+                  ) : (
+                    <img
+                      src={require("assets/results/checkbox-empty.png")}
+                      alt="Unchecked checkbox"
+                    />
+                  )}
                 </button>
                 <div className={styles.qa}>
                   <p className={styles.question}>{item.question}</p>
