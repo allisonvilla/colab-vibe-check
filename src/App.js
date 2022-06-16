@@ -13,23 +13,84 @@ function App() {
   const defaultUser = {
     name: `Onyinye`,
     age: 24,
-    showResults: true,
-    quizComplete: false
+    daterType: null,
+    daterDesc: null
   };
 
   const defaultQuiz = {
-    type: null,
-    q1: null,
-    q2: null,
-    q3: null,
-    q4: null,
-    // Questions 5-10 are the only ones that may get shown on user's profile
-    q5: null,
-    q6: null,
-    q7: null,
-    q8: null,
-    q9: null,
-    q10: null
+    // Compatibility questions (q1-q4)
+    q1: {
+      // These values are set in VibeQuestionComponent.js
+      question: null, // Question asked
+      answer: null, // User's answer
+      type: null, // Dater type the question affected
+      show: false, // Whether or not the user chooses to show this answer
+      key: 1
+    },
+    q2: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 2
+    },
+    q3: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 3
+    },
+    q4: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 4
+    },
+    q5: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 5
+    },
+    // Conversation starters (q6-q10)
+    q6: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 6
+    },
+    q7: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 7
+    },
+    q8: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 8
+    },
+    q9: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 9
+    },
+    q10: {
+      question: null,
+      answer: null,
+      type: null,
+      show: false,
+      key: 10
+    }
   };
 
   const [userData, setUserData] = React.useState(defaultUser);

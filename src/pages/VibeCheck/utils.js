@@ -2,7 +2,7 @@
 import Step1 from "./steps/step1/step1";
 import Break from "./steps/questions/Break";
 import Question from "./steps/questions/Question";
-import Results from "./Results/Results";
+import ResultsStep from "./steps/resultsStep/ResultsStep";
 
 export function renderView(state) {
   const { view } = state;
@@ -33,7 +33,7 @@ export function renderView(state) {
     case "step12":
       return <Question progress={10} />;
     case "step13":
-      return <Results />;
+      return <ResultsStep />;
   }
 }
 

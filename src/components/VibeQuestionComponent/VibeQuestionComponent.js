@@ -90,7 +90,8 @@ export const VibeQuestionComponent = ({
                             newState[`q${progress}`] = {
                               question: question,
                               answer: option,
-                              type: value
+                              type: value,
+                              key: progress
                             };
                             return newState;
                           });

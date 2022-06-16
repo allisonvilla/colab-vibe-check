@@ -1,0 +1,145 @@
+@import "../..//sass/main.scss";
+
+.container {
+  width: 100%;
+  position: relative;
+  min-height: 700px;
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 40px;
+
+  h1 {
+    line-height: 31px;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.62);
+  }
+
+  h2 {
+    font-size: 1rem;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.43);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 29px;
+    color: rgba(0, 0, 0, 0.62);
+  }
+
+  img {
+    width: 207px;
+    align-self: center;
+    margin: 20px auto 30px;
+  }
+
+  .description {
+    margin-bottom: 35px;
+  }
+
+  .instruction {
+    margin-bottom: 20px;
+    color: #000;
+    font-weight: 500;
+  }
+
+  .questionHeader {
+    display: flex;
+    justify-content: space-between;
+
+    h4 {
+      font-size: 1rem;
+      font-weight: 400;
+      color: #000;
+    }
+  }
+
+  .selectAllBtn {
+    background-color: #3dc6be;
+    border-radius: 20px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.875rem;
+    padding: 6px 25px;
+    margin: 25px 0 30px;
+  }
+
+  .questionSection {
+    background-color: rgba(61, 198, 190, 0.2);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 20px 20px 15px;
+
+    li {
+      display: flex;
+      margin-bottom: 15px;
+
+      button {
+        margin-right: 18px;
+        margin-top: 3px;
+        align-self: flex-start;
+      }
+
+      p {
+        font-size: 0.875rem;
+        line-height: 1.2rem;
+      }
+
+      .question {
+        font-weight: 500;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .questionSection:nth-of-type(2) {
+    background-color: rgba(255, 113, 145, 0.2);
+
+    li {
+      //   .question {
+      //     font-weight: 500;
+      //   }
+
+      .answer {
+        font-style: italic;
+      }
+    }
+  }
+
+  .addAnswers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+
+    p {
+      text-align: center;
+      font-size: 0.875rem;
+      color: #a8a8a8;
+      margin-bottom: 10px;
+    }
+
+    button {
+      font-size: 1rem;
+      color: white;
+      font-weight: 600;
+      background-color: #f64900;
+      border-radius: 28px;
+      text-align: center;
+      padding: 15px 40px;
+      margin-bottom: 20px;
+    }
+
+    a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.43);
+    }
+  }
+}
+
+.collapsed {
+  display: none;
+}
