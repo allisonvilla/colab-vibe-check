@@ -77,7 +77,6 @@ const Results = () => {
         />
 
         <p className={styles.description}>{userData.daterDesc}</p>
-        <p className={styles.instruction}>Add your answers to your profile below!</p>
 
         <div className={styles.questionSection}>
           <div className={styles.questionHeader}>

@@ -254,7 +254,6 @@ const ResultsStep = () => {
 
         <div className={styles.addAnswers}>
           <p>Note: Selected answers will be added to profile</p>
-          {/* need assets */}
           <button
             onClick={() => {
               saveSelected();
