@@ -155,7 +155,7 @@ const ConversationChat = ({ initialAns, name, msgsArr }) => {
           <p className={styles.snippetHeader}>You</p>
           {initialAns}
         </div>
-        <div className={styles.time_}>{seen}</div>
+        <div className={styles.seen}>{seen}</div>
       </div>
 
       <div className={styles.openedAns}>
@@ -179,11 +179,9 @@ const ConversationChat = ({ initialAns, name, msgsArr }) => {
                   <p className={styles.snippetHeader}>You</p>
                   {e}
                 </div>
-                {seen && (
-                  <div className={styles.time_} key={e + i}>
-                    {seen}
-                  </div>
-                )}
+                <div className={styles.seen} key={e + i}>
+                  <span className={styles.hide}>{seen}</span>
+                </div>
               </div>
             );
           })
