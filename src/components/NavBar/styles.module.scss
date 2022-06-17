@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  bottom: 0px;
   width: 100%;
   max-width: 428px;
   background-color: white;
@@ -12,6 +11,31 @@
   border-radius: 0 0 25px 25px;
 
   a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 20px auto 15px;
+    height: 111%;
+    width: 50px;
+  }
+
+  svg {
+    height: 35px;
+    width: 35px;
+
+    path {
+      fill: #909090;
+      stroke: #909090;
+    }
+  }
+
+  .focused {
+    border-top: 3px solid #f64900;
+
+    path {
+      stroke: #f64900;
+      fill: #f64900;
+    }
   }
 }
