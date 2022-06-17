@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useContext } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import styles from "./styles.module.scss";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { ReactComponent as ValentineSVG } from "assets/valentine.svg";
@@ -6,6 +6,9 @@ import { ReactComponent as HeartWithRoses } from "assets/heartwithroses.svg";
 import PropTypes from "prop-types";
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import { UserContext } from "App";
+
+
+
 
 export const VibeQuestionComponent = ({
   progress,
@@ -22,6 +25,7 @@ export const VibeQuestionComponent = ({
   const [svg, setSvg] = useState("");
   const { setQuizData } = useContext(UserContext);
 
+  //set answer in parent component
   useEffect(() => {
     if (checkedOption.option && checkedOption.option !== "text-input") {
       setTimeout(() => {
@@ -38,8 +42,8 @@ export const VibeQuestionComponent = ({
     }
     //dynamically set svg icon
     const arr = [<ValentineSVG />, <HeartWithRoses />];
-    setSvg(arr[Math.floor(Math.random() * arr.length)]);
-  }, []);
+    setSvg(arr[progress % 2]);
+  }, [nextScreen, checkedOption, progress]);
 
   const handleUpdate = (data) => {
     setCheckedOption(data);
@@ -49,7 +53,7 @@ export const VibeQuestionComponent = ({
     <VibeCheckContext.Consumer>
       {({ setPossibleOutcomes }) => (
         <div className={styles.bodyWrapper}>
-          <div className={styles.innerWrapper}>
+          <div key={progress} className={styles.innerWrapper}>
             <div className={styles.inner} ref={innerDivRef}>
               <div className={styles.header}>
                 <div className={styles.progressBar}>
@@ -74,6 +78,7 @@ export const VibeQuestionComponent = ({
                     const id = option.toLowerCase();
                     return (
                       <div
+                        key={option + id + idx}
                         onClick={() => {
                           handleUpdate({ option, value, weight });
                           setPossibleOutcomes((prevScore) => {
@@ -95,9 +100,8 @@ export const VibeQuestionComponent = ({
                         className={`${styles.singleOption} ${
                           option === checkedOption?.option && styles.active
                         }`}
-                        key={option + id + idx}
                       >
-                        <input type="radio" {...{ id, value, name }} />
+                        <input hidden type="radio" {...{ id, value, name }} />
                         <label htmlFor={id}>{option}</label>
                       </div>
                     );
@@ -130,7 +134,11 @@ export const VibeQuestionComponent = ({
                 </div>
               </div>
             </div>
-            <div className={styles.inner1} ref={innerDiv1Ref} />
+            <div className={styles.inner1} ref={innerDiv1Ref}>
+              {React.Children.toArray([...new Array(4)].map(() => (
+                <div className={styles.fakeQuestion} />
+              )))}
+            </div>
             <div className={styles.inner2} ref={innerDiv2Ref} />
           </div>
         </div>
@@ -143,5 +151,6 @@ VibeQuestionComponent.propTypes = {
   progress: PropTypes.number,
   question: PropTypes.string,
   options: PropTypes.array.isRequired,
-  nextScreen: PropTypes.func.isRequired
+  nextScreen: PropTypes.func.isRequired,
+  showTextInput: PropTypes.bool
 };

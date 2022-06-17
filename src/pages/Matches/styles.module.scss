@@ -1,0 +1,100 @@
+@import "../..//sass/main.scss";
+
+
+  .subHeader {
+    margin-top: 30px;
+    color: #000000;
+    width: 100%;
+    padding: 0 20px;
+    .iconandspan {
+      display: flex;
+      align-items: center;
+      span {
+        opacity: 60%;
+        font-size: 18px;
+        margin-left: 11px;
+        font-weight: 600;
+      }
+    }
+    .hLine {
+      height: 1px;
+      background-color: #199093;
+      border: 0.5px solid #199093;
+      width: 146px;
+      margin: 12px 0;
+    }
+
+    .messages {
+      margin-top: 10px;
+      overflow-x: auto;
+      overflow-y: hidden;
+      cursor: pointer;
+      :hover {
+        filter: brightness(0.98);
+      }
+      .message {
+        height: 94px;
+        border-radius: 15px;
+        background-color: #fbfbfb;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+        justify-content: center;
+        min-width: 365px;
+
+        img {
+          height: 46px;
+          width: 46px;
+          border-radius: 50%;
+        }
+        .chatMsg {
+          margin: 0 10px;
+          font-family: "Poppins", "Inter";
+          min-width: 200px;
+          .chatName {
+            font-size: 16px;
+          }
+          .chat {
+            color: rgba(0, 0, 0, 0.43);
+            font-size: 14px;
+          }
+        }
+        .chatTime {
+          color: rgba(0, 0, 0, 0.43);
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+  .topMatches {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin-bottom: 20px;
+    .img {
+      height: 118px;
+      width: 98px;
+      position: relative;
+      margin-right: 10px;
+      cursor: pointer;
+
+      &:hover :not(.name){
+        filter: brightness(0.8);
+      }
+      .name {
+        position: absolute;
+        font-size: 12px;
+        font-weight: 600;
+        color: #fff;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+        text-align: center;
+      }
+    }
+  }
+

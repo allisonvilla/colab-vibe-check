@@ -1,0 +1,291 @@
+@import "../../..//sass/main.scss";
+
+.container {
+  @include flexmiddle;
+  height: 926px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: relative;
+  .top {
+    height: 90px;
+    margin: 20px 0;
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.45);
+    .imgThumbnail {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 20px;
+    }
+
+    .topWrapper {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      a {
+        text-align: center;
+        padding: 5px;
+        :hover {
+          border-radius: 50%;
+          background: rgba(196, 196, 196, 0.45);
+        }
+      }
+      .nameOnlineStatus {
+        .name {
+          font-family: "Poppins", "Inter";
+          font-size: 18px;
+          color: #000000;
+        }
+        .online {
+          font-family: "Poppins", "Inter";
+          font-size: 12px;
+          color: #12c12e;
+        }
+        .offline {
+          font-family: "Poppins", "Inter";
+          font-size: 12px;
+          color: red;
+        }
+      }
+      .flagsvg {
+        position: absolute;
+        right: 10px;
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    padding: 0 20px;
+    font-family: "Poppins", "Inter";
+    .vibeCheck {
+      background: rgba(234, 231, 231, 0.3);
+      opacity: 0.9;
+      border-radius: 10px;
+      position: relative;
+      margin-top: 40px;
+      .vector {
+        position: absolute;
+        z-index: -1;
+        height: auto;
+        width: 100%;
+      }
+      .header {
+        font-size: 18px;
+        color: #073536;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        padding: 10px;
+
+        button {
+          position: absolute;
+          right: 20px;
+          :hover {
+            filter: brightness(0.5);
+          }
+        }
+      }
+
+      .question {
+        font-size: 18px;
+        font-weight: bold;
+        color: rgba(0, 0, 0, 0.8);
+        margin: 40px 0;
+        padding: 0 40px;
+      }
+
+      .option {
+        border: 1px solid #f64900;
+        margin: 10px 40px;
+        border-radius: 8px;
+        padding: 5px 0;
+        font-family: "Poppins", "Inter";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.73);
+        background: #fff;
+        cursor: pointer;
+        input[type="radio"] {
+          width: 100%;
+        
+        }
+        label {
+          cursor: pointer;
+        }
+        &:hover {
+          background: #f64900;
+          color: #fff;
+        }
+      }
+      .lockedAnswer {
+        padding: 40px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        .nameLock {
+          font-family: "Poppins";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          display: flex;
+          background: #ebe9e9;
+          align-items: center;
+          padding: 10px 18px;
+          border-radius: 20px 20px 0px 20px;
+          span {
+            color: rgba(0, 0, 0, 0.73);
+            opacity: 0.5;
+          }
+          svg {
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .chatbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    padding: 0 20px;
+    background: #fff;
+    padding-bottom: 20px;
+    border-radius: 10px;
+    input {
+      background: rgba(196, 196, 196, 0.15);
+      border: 1px solid #ebedee;
+      border-radius: 8px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      width: 90%;
+      height: 50px;
+      padding: 0 15px;
+      outline: none;
+        &:read-only {
+       opacity: .4;
+
+        }
+    }
+
+    svg {
+      margin-left: 10px;
+    }
+  }
+}
+
+.imgThumbnail {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 20px;
+}
+
+.coversationChat {
+  width: 100%;
+  padding: 0 40px;
+  overflow: auto;
+  // padding-bottom: 100px;
+  margin-bottom: 80px;
+  @media screen and (max-width: 760px) {
+    padding: 0 10px;
+  }
+  .snippetHeader {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(124, 124, 124, 0.73);
+  }
+
+  .initialQue {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    padding: 15px 30px;
+    color: rgba(0, 0, 0, 0.73);
+    background: #fef4f0;
+    border: 1px solid #f6f6f6;
+    border-radius: 20px 20px 20px 0;
+    &__{
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 12px;
+      padding: 15px 30px;
+      color: rgba(0, 0, 0, 0.73);
+      border: 1px solid #f6f6f6;
+      border-radius: 20px 20px 20px 0;
+      background: rgba(196, 196, 196, 0.17)
+    }
+  }
+  .time {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.43);
+    margin: 2px 0;
+  }
+
+  .myMsg {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+ outline: none;
+    .initialQue_ {
+      color: #fff;
+      background: #3dc6be;
+      padding: 15px 30px;
+      border-radius: 20px 20px 0px 20px;
+      position: relative;
+      margin-top: 5px;
+        font-size: 12px;
+        .snippetHeader {
+          text-align: left;
+          width: initial;
+          position: absolute;
+          top: -20px;
+          left: 5px;
+        }
+    }
+    .time_ {
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.43);
+      margin: 2px 0;
+    }
+  }
+
+  .openedAns{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0;
+    
+    color: rgba(0, 0, 0, 0.73);
+  }
+}

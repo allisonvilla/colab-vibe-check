@@ -6,9 +6,11 @@ import { ReactComponent as MaleFaceCard } from "assets/maleFaceCard.svg";
 import { ReactComponent as FemaleFaceCard } from "assets/femaleFaceCard.svg";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import { VibeCheckContext, useVibeCheckContext } from "pages/VibeCheck/VibeCheck";
+import { useNavigate } from "react-router-dom";
 
 function Step1(props) {
   const { dispatch } = useVibeCheckContext();
+  const navigate = useNavigate();
 
   const handleNext = () => dispatch({ type: "STEP2" });
 
@@ -52,6 +54,9 @@ function Step1(props) {
               className={styles.linkBtn}
             >
               Let&#39;s Go! <HiOutlineChevronDoubleRight />
+            </button>
+            <button to="/" className={styles.backbtn} onClick={() => navigate(-1)}>
+              Go back
             </button>
           </div>
         </div>
