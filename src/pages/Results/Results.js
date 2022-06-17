@@ -152,7 +152,6 @@ const Results = () => {
           >
             Back <HiOutlineChevronDoubleRight />
           </button>
-          <Link to="/">Cancel</Link>
         </div>
       </div>
     );
