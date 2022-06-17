@@ -4,7 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  bottom: 0px;
   width: 100%;
   max-width: 428px;
   background-color: white;
@@ -12,6 +11,10 @@
   border-radius: 0 0 25px 25px;
 
   a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 20px auto 15px;
     padding: 20px;
     margin-top: -2px;
