@@ -1,35 +1,36 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./styles.module.scss";
-import NavMatches from "assets/nav-matches";
-import NavSwipe from "assets/nav-swipe";
-import NavProfile from "assets/nav-profile";
+import { ReactComponent as NavMatches } from "assets/nav/matches.svg";
+import { ReactComponent as NavFire } from "assets/nav/fire.svg";
+import { ReactComponent as NavProfile } from "assets/nav/profile.svg";
 
 const NavBar = () => {
   const { pathname } = useLocation();
   const links = [
     {
       url: "/vibecheck",
-      navIcon: NavSwipe
+      icon: <NavFire />,
+      key: `vibecheck`
     },
     {
       url: "/matches",
-      navIcon: NavMatches
+      icon: <NavMatches />,
+      key: `matches`
     },
     {
       url: "/",
-      navIcon: NavProfile
+      icon: <NavProfile />,
+      key: `profile`
     }
   ];
 
   return (
     <nav className={styles.container}>
-      {links.map(({ navIcon: Logo, url }, i) => {
-        return (
-          <Link to={url} className={pathname === url ? styles.active : ""} key={i + url}>
-            <Logo stroke={pathname === url ? "#F73A5A" : null} />
-          </Link>
-        );
-      })}
+      {links.map((i) => (
+        <Link to={i.url} className={pathname === i.url ? styles.focused : null} key={i.key}>
+          {i.icon}
+        </Link>
+      ))}
     </nav>
   );
 };
