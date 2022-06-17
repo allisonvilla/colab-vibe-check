@@ -36,10 +36,6 @@ h1 {
   @include primaryBtnStyle;
   font-weight: 600;
   margin-top: 110px;
-
-  svg {
-    margin-left: 10px;
-  }
 }
 
 .resultsBtn {
@@ -50,10 +46,6 @@ h1 {
   color: #f64900;
   font-weight: 600;
   margin-top: 110px;
-
-  svg {
-    margin-left: 12px;
-  }
 }
 
 .profilePreview {

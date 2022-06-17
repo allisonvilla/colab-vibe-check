@@ -148,21 +148,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      transition: 0.3s;
 
       svg {
         margin-left: 5px;
-        transition: 0.9s;
-      }
-
-      &:hover {
-        transform: translateY(-3px);
-        box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
-        filter: brightness(1.1);
-
-        svg {
-          transform: translateX(10px);
-        }
       }
     }
 
