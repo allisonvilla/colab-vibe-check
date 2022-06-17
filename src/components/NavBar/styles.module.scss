@@ -16,13 +16,29 @@
     justify-content: center;
     align-items: center;
     margin: 20px auto 15px;
-    padding: 20px;
-    margin-top: -2px;
-    padding-top: 15px;
-    &.active {
-      border-top: 2px solid #f73a5a;
+    height: 113%;
+    width: 55px;
+  }
+
+  svg {
+    height: 30px;
+    width: 30px;
+
+    path {
+      fill: #909090;
+      stroke: #909090;
     }
   }
+
+  .focused {
+    border-top: 3px solid #f64900;
+
+    path {
+      stroke: #f64900;
+      fill: #f64900;
+    }
+  }
+
   @media screen and (max-width: 750px) {
     position: fixed;
   }
