@@ -13,6 +13,12 @@
 
   a {
     margin: 20px auto 15px;
+    padding: 20px;
+    margin-top: -2px;
+    padding-top: 15px;
+    &.active {
+      border-top: 2px solid #f73a5a;
+    }
   }
   @media screen and (max-width: 750px) {
     position: fixed;

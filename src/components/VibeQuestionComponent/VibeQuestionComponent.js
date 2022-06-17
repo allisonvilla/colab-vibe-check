@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, useContext } from "react";
+import React, { useEffect, useRef, useState, useContext } from "react";
 import styles from "./styles.module.scss";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { ReactComponent as ValentineSVG } from "assets/valentine.svg";
@@ -78,6 +78,7 @@ export const VibeQuestionComponent = ({
                     const id = option.toLowerCase();
                     return (
                       <div
+                        key={option + id + idx}
                         onClick={() => {
                           handleUpdate({ option, value, weight });
                           setPossibleOutcomes((prevScore) => {
@@ -99,9 +100,8 @@ export const VibeQuestionComponent = ({
                         className={`${styles.singleOption} ${
                           option === checkedOption?.option && styles.active
                         }`}
-                        key={option + id + idx}
                       >
-                        <input type="radio" {...{ id, value, name }} />
+                        <input hidden type="radio" {...{ id, value, name }} />
                         <label htmlFor={id}>{option}</label>
                       </div>
                     );
@@ -135,9 +135,9 @@ export const VibeQuestionComponent = ({
               </div>
             </div>
             <div className={styles.inner1} ref={innerDiv1Ref}>
-              {[...new Array(4)].map(() => (
+              {React.Children.toArray([...new Array(4)].map(() => (
                 <div className={styles.fakeQuestion} />
-              ))}
+              )))}
             </div>
             <div className={styles.inner2} ref={innerDiv2Ref} />
           </div>

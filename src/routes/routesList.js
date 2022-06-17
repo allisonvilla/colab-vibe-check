@@ -4,7 +4,8 @@ import { Navigate } from "react-router-dom";
 const Home = lazy(() => import("pages/Home/Home"));
 const VibeCheck = lazy(() => import("pages/VibeCheck/VibeCheck"));
 const Results = lazy(() => import("pages/Results/Results"));
-const Messages = lazy(() => import("pages/VibeCheck/Messages"));
+const Matches = lazy(() => import("pages/Matches/Matches"));
+const Chat = lazy(() => import("pages/Matches/Chat/Chat"));
 
 const routes = [
   {
@@ -23,9 +24,14 @@ const routes = [
     component: Results
   },
   {
-    path: "/messages",
+    path: "/matches",
     exact: true,
-    component: Messages
+    component: Matches
+  },
+  {
+    path: "/matches/:id",
+    exact: true,
+    component: Chat
   },
   {
     path: "*",

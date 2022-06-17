@@ -1,26 +1,16 @@
 @import "../../sass/main.scss";
 
-.container {
-  @include flexmiddle;
-  height: 926px;
-  width: 100%;
-  flex-direction: column;
-  justify-content: flex-start;
+a {
+  font-size: $default-font-sm;
+}
 
-  .spacer {
-    flex-grow: 1;
-  }
-
-  h1 {
+h1 {
+  &.nameAge {
     color: $header-grey;
     font-size: $default-font-lg;
     font-weight: 600;
     margin-top: 45px;
     padding-bottom: 10px;
-  }
-
-  a {
-    font-size: $default-font-sm;
   }
 }
 

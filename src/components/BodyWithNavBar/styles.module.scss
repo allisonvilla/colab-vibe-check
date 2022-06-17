@@ -1,0 +1,15 @@
+@import "../../sass/main.scss";
+
+.container {
+  @include flexmiddle;
+  height: 926px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  .spacer {
+    flex-grow: 1;
+  }
+
+  
+}

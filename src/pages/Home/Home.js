@@ -1,22 +1,19 @@
 import { Link } from "react-router-dom";
 import styles from "./styles.module.scss";
-import NavBar from "components/NavBar/NavBar";
 import { useContext } from "react";
 import { UserContext } from "App";
+import BodyWithNavBar from "components/BodyWithNavBar/BodyWithNavBar";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 
 function Home() {
   const { userData } = useContext(UserContext);
   return (
-    <div className={styles.container}>
-      <div className={styles.imgWrapper}></div>
-
-      <h1>
+    <BodyWithNavBar>
+      <div className={styles.imgWrapper} />
+      <h1 className={styles.nameAge}>
         {userData.name} {userData.age}
       </h1>
-
-      <div className={styles.divider}></div>
-
+      <div className={styles.divider} />
       {userData.daterType ? (
         <Link to="/myresults" className={styles.resultsBtn}>
           Vibe Check Results <HiOutlineChevronDoubleRight />
@@ -26,9 +23,7 @@ function Home() {
           Vibe Check <HiOutlineChevronDoubleRight />
         </Link>
       )}
-      <div className={styles.spacer} />
-      <NavBar />
-    </div>
+    </BodyWithNavBar>
   );
 }
 
