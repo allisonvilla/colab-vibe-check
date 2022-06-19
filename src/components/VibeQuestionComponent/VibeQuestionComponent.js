@@ -126,6 +126,7 @@ export const VibeQuestionComponent = ({
                             };
                             return newState;
                           });
+                          setTextInput("");
                           nextScreen();
                         }}
                         disabled={!(textInput.length >= 1)}
