@@ -7,9 +7,6 @@ import PropTypes from "prop-types";
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import { UserContext } from "App";
 
-
-
-
 export const VibeQuestionComponent = ({
   progress,
   question,
@@ -135,9 +132,9 @@ export const VibeQuestionComponent = ({
               </div>
             </div>
             <div className={styles.inner1} ref={innerDiv1Ref}>
-              {React.Children.toArray([...new Array(4)].map(() => (
-                <div className={styles.fakeQuestion} />
-              )))}
+              {React.Children.toArray(
+                [...new Array(4)].map(() => <div className={styles.fakeQuestion} />)
+              )}
             </div>
             <div className={styles.inner2} ref={innerDiv2Ref} />
           </div>
