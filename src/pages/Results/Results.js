@@ -1,11 +1,10 @@
 import { UserContext } from "App";
 import { useContext, useEffect, useState } from "react";
 import { Navigate, useNavigate, Link } from "react-router-dom";
-import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import styles from "./styles.module.scss";
 
 const Results = () => {
-  const { quizData, userData } = useContext(UserContext);
+  const { quizData, userData, setQuizData, setUserData, defaultQuiz } = useContext(UserContext);
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
@@ -37,6 +36,16 @@ const Results = () => {
     } else if (list === "conversation") {
       setConvCollapsed(!convCollapsed);
     }
+  };
+
+  const handleRemove = () => {
+    setQuizData(defaultQuiz);
+    setUserData((prevState) => {
+      let newState = { ...prevState };
+      newState.daterType = null;
+      newState.daterDesc = null;
+      return newState;
+    });
   };
 
   const images = {
@@ -146,7 +155,14 @@ const Results = () => {
 
         <div className={styles.lockedIn}>
           <Link to="/">Back to profile</Link>
-          <button>Remove from profile</button>
+          <button
+            onClick={() => {
+              handleRemove();
+              navigate("/");
+            }}
+          >
+            Remove from profile
+          </button>
         </div>
       </div>
     );

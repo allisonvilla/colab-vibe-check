@@ -41,14 +41,7 @@ const ResultsStep = () => {
         setDaterType("goWithTheFlow");
       }
     }
-
-    setUserData((prevState) => {
-      let newState = { ...prevState };
-      newState.daterType = daterType;
-      newState.daterDesc = description;
-      return newState;
-    });
-  }, [daterType, description, possibleOutcomes, setUserData]);
+  }, [daterType, description, possibleOutcomes]);
 
   useEffect(() => {
     const compArr = [];

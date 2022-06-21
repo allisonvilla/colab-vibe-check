@@ -66,10 +66,10 @@
   }
 
   .questionSection {
-    //background-color: rgba(61, 198, 190, 0.2);
-    margin-bottom: 20px;
+    background-color: rgba(61, 198, 190, 0.2);
+    margin-bottom: 30px;
     border-radius: 10px;
-    padding: 5px;
+    padding: 20px 20px 15px;
 
     li {
       display: flex;
@@ -109,7 +109,7 @@
   }
 
   .questionSection:nth-of-type(2) {
-    //background-color: rgba(255, 113, 145, 0.2);
+    background-color: rgba(255, 113, 145, 0.2);
 
     li {
       .answer {
