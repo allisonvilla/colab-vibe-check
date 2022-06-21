@@ -7,9 +7,6 @@ import PropTypes from "prop-types";
 import { VibeCheckContext } from "pages/VibeCheck/VibeCheck";
 import { UserContext } from "App";
 
-
-
-
 export const VibeQuestionComponent = ({
   progress,
   question,
@@ -23,6 +20,7 @@ export const VibeQuestionComponent = ({
   const innerDiv2Ref = useRef(null);
   const [checkedOption, setCheckedOption] = useState({});
   const [svg, setSvg] = useState("");
+  const [textInput, setTextInput] = useState("");
   const { setQuizData } = useContext(UserContext);
 
   //set answer in parent component
@@ -114,18 +112,24 @@ export const VibeQuestionComponent = ({
                         id=""
                         cols="30"
                         rows="3"
-                        onChange={(e) =>
-                          handleUpdate({ option: "text-input", value: e.target.value })
-                        }
+                        onChange={(input) => setTextInput(input.target.value)}
                       />
                       <button
-                        onClick={nextScreen}
-                        disabled={
-                          !(
-                            checkedOption?.option === "text-input" &&
-                            checkedOption?.value.length > 1
-                          )
-                        }
+                        onClick={() => {
+                          setQuizData((prevState) => {
+                            let newState = { ...prevState };
+                            newState[`q${progress}`] = {
+                              question: question,
+                              answer: textInput,
+                              type: "noEffect",
+                              key: progress
+                            };
+                            return newState;
+                          });
+                          setTextInput("");
+                          nextScreen();
+                        }}
+                        disabled={!(textInput.length >= 1)}
                       >
                         Continue
                       </button>
@@ -135,9 +139,9 @@ export const VibeQuestionComponent = ({
               </div>
             </div>
             <div className={styles.inner1} ref={innerDiv1Ref}>
-              {React.Children.toArray([...new Array(4)].map(() => (
-                <div className={styles.fakeQuestion} />
-              )))}
+              {React.Children.toArray(
+                [...new Array(4)].map(() => <div className={styles.fakeQuestion} />)
+              )}
             </div>
             <div className={styles.inner2} ref={innerDiv2Ref} />
           </div>

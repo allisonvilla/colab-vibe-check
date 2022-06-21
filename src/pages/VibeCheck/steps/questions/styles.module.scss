@@ -35,21 +35,30 @@
   color: rgba(0, 0, 0, 0.37);
 }
 
-.breakScreen{
+.breakScreen {
   text-align: center;
   margin: 60px 0;
+  color: rgba(0, 0, 0, 0.62);
+
+  img {
+    margin-bottom: 50px;
+    margin-top: 40px;
+  }
+
   button {
     border: 1px solid $main-accent;
     width: 50%;
     margin: 50px auto;
     border-radius: 5px;
     padding: 10px;
-    color: $main-accent;
-  &:hover{
     background: $main-accent;
     color: #fff;
-  }
+    border-radius: 28px;
+    transition: 0.3s;
+
+    &:hover {
+      background: #fff;
+      color: $main-accent;
+    }
   }
 }
-
-

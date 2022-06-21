@@ -14,7 +14,8 @@ function App() {
     name: `Onyinye`,
     age: 24,
     daterType: null,
-    daterDesc: null
+    daterDesc: null,
+    showOnProfile: false
   };
 
   const defaultQuiz = {
@@ -97,7 +98,7 @@ function App() {
   const [quizData, setQuizData] = React.useState(defaultQuiz);
 
   return (
-    <UserContext.Provider value={{ userData, setUserData, quizData, setQuizData }}>
+    <UserContext.Provider value={{ userData, setUserData, quizData, setQuizData, defaultQuiz }}>
       <Router>
         <ErrorBoundary>
           <Suspense fallback={<FullPageSpinner />}>

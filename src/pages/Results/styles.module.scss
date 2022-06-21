@@ -50,7 +50,7 @@
 
     h4 {
       font-size: 1rem;
-      font-weight: 400;
+      font-weight: 500;
       color: #000;
     }
   }
@@ -112,10 +112,6 @@
     background-color: rgba(255, 113, 145, 0.2);
 
     li {
-      //   .question {
-      //     font-weight: 500;
-      //   }
-
       .answer {
         font-style: italic;
       }
@@ -148,9 +144,21 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      transition: 0.3s;
 
       svg {
         margin-left: 5px;
+        transition: 0.9s;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.3);
+        filter: brightness(1.1);
+
+        svg {
+          transform: translateX(10px);
+        }
       }
     }
 
@@ -159,6 +167,27 @@
       font-size: 1rem;
       color: rgba(0, 0, 0, 0.43);
     }
+  }
+}
+
+.lockedIn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  a {
+    color: #f64900;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-decoration: underline;
+  }
+
+  button {
+    font-weight: 600;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.43);
   }
 }
 
