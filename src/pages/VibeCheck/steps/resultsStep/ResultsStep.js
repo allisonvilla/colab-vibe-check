@@ -24,10 +24,10 @@ const ResultsStep = () => {
 
   useEffect(() => {
     const descriptions = {
-      seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
-      casualDater: `You're not looking for anything serious, you just want to have some fun.`,
-      goWithTheFlow: `You're someone who is open to seeing where things go (open to casual or serious dating depending on the person).`,
-      workingOnMyself: `You're someone who prioritizes their own life over dating someone new at the moment.`
+      seriousDater: `You're looking to form a meaningful romantic connection. You want to find a partner who truly cares about you and wants to be an active part of your life.`,
+      casualDater: `You're not looking for anything serious right now. You just want to have some fun without any serious commitments.`,
+      goWithTheFlow: `You're open to seeing where things go with someone. You are open to casual or serious dating depending on the person you're seeing.`,
+      workingOnMyself: `You are currently prioritizing your own life over dating at the moment. You're open to meeting someone new, but your personal goals are more important right now.`
     };
 
     let highestCount = 0;
