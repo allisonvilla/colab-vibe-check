@@ -8,7 +8,7 @@ const NavBar = () => {
   const { pathname } = useLocation();
   const links = [
     {
-      url: "/vibecheck",
+      url: "",
       icon: <NavFire />,
       key: `vibecheck`
     },
