@@ -83,8 +83,7 @@ const ResultsStep = () => {
   const handleSelect = (ans) => {
     if (selectedAnswers.includes(ans)) {
       setSelectedAnswers((prevState) => {
-        let newState = [...prevState];
-        let filteredArr = newState.filter((i) => i !== ans);
+        let filteredArr = prevState.filter((i) => i !== ans);
         return filteredArr;
       });
     } else {
@@ -112,8 +111,7 @@ const ResultsStep = () => {
     arr.forEach((q) => {
       if (selectedAnswers.includes(q)) {
         setSelectedAnswers((prevState) => {
-          let newState = [...prevState];
-          let filteredArr = newState.filter((i) => i !== q);
+          let filteredArr = prevState.filter((i) => i !== q);
           return filteredArr;
         });
       }
