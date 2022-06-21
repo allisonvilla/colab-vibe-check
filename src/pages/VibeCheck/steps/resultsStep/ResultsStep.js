@@ -144,6 +144,12 @@ const ResultsStep = () => {
   };
 
   const saveSelected = () => {
+    setUserData((prevState) => {
+      let newState = { ...prevState };
+      newState.daterType = daterType;
+      newState.daterDesc = description;
+      return newState;
+    });
     for (const q in quizData) {
       if (selectedAnswers.includes(quizData[q])) {
         setQuizData((prevState) => {
