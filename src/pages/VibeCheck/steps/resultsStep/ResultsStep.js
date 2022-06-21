@@ -108,6 +108,18 @@ const ResultsStep = () => {
     });
   };
 
+  const handleUnselectAll = (arr) => {
+    arr.forEach((q) => {
+      if (selectedAnswers.includes(q)) {
+        setSelectedAnswers((prevState) => {
+          let newState = [...prevState];
+          let filteredArr = newState.filter((i) => i !== q);
+          return filteredArr;
+        });
+      }
+    });
+  };
+
   const saveSelected = () => {
     for (const q in quizData) {
       if (selectedAnswers.includes(quizData[q])) {
