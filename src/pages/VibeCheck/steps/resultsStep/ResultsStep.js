@@ -14,6 +14,8 @@ const ResultsStep = () => {
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
+  const [compSelectAll, setCompSelectAll] = useState(false);
+  const [convSelectAll, setConvSelectAll] = useState(false);
   const [compatibilityQs, setCompatibilityQs] = useState([]);
   const [conversationQs, setConversationQs] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
@@ -71,6 +73,36 @@ const ResultsStep = () => {
     setCompatibilityQs(compArr);
     setConversationQs(convArr);
   }, [quizData]);
+
+  useEffect(() => {
+    let arr = [];
+    compatibilityQs.forEach((q) => {
+      if (selectedAnswers.includes(q)) {
+        arr.push(q);
+      }
+    });
+    if (arr.length === 5) {
+      setCompSelectAll(true);
+    } else {
+      setCompSelectAll(false);
+    }
+    arr.splice(0);
+  }, [selectedAnswers, compatibilityQs]);
+
+  useEffect(() => {
+    let arr = [];
+    conversationQs.forEach((q) => {
+      if (selectedAnswers.includes(q)) {
+        arr.push(q);
+      }
+    });
+    if (arr.length === 5) {
+      setConvSelectAll(true);
+    } else {
+      setConvSelectAll(false);
+    }
+    arr.splice(0);
+  }, [selectedAnswers, conversationQs]);
 
   const handleExpand = (list) => {
     if (list === "compatibility") {
@@ -192,14 +224,25 @@ const ResultsStep = () => {
             </button>
           </div>
           <ul className={compCollapsed ? styles.collapsed : null}>
-            <button
-              onClick={() => {
-                handleSelectAll(compatibilityQs);
-              }}
-              className={styles.selectAllBtn}
-            >
-              Select All
-            </button>
+            {compSelectAll ? (
+              <button
+                onClick={() => {
+                  handleUnselectAll(compatibilityQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Unselect All
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  handleSelectAll(compatibilityQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Select All
+              </button>
+            )}
             {compatibilityQs.map((item) => (
               <li key={item.key}>
                 <button
@@ -244,14 +287,25 @@ const ResultsStep = () => {
             </button>
           </div>
           <ul className={convCollapsed ? styles.collapsed : null}>
-            <button
-              onClick={() => {
-                handleSelectAll(conversationQs);
-              }}
-              className={styles.selectAllBtn}
-            >
-              Select All
-            </button>
+            {convSelectAll ? (
+              <button
+                onClick={() => {
+                  handleUnselectAll(conversationQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Unselect All
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  handleSelectAll(conversationQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Select All
+              </button>
+            )}
             {conversationQs.map((item) => (
               <li key={item.key}>
                 <button
