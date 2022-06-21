@@ -1,10 +1,9 @@
 
 # Vibe Check
 
-### [Live Link](https://colab-vibe-check.netlify.app/)
-### [Write-Up](https://www.joincolab.io/projects/vibe-check)
-
 A compatibility quiz feature for swipe-based dating apps. Built as a demo-able prototype for the [Co.Lab](https://www.joincolab.io/) program. 
+
+[Live Link](https://colab-vibe-check.netlify.app/) | [Write-Up](https://www.joincolab.io/projects/vibe-check)
 
 
 ## Created By
