@@ -14,6 +14,8 @@ const ResultsStep = () => {
 
   const [compCollapsed, setCompCollapsed] = useState(true);
   const [convCollapsed, setConvCollapsed] = useState(true);
+  const [compSelectAll, setCompSelectAll] = useState(false);
+  const [convSelectAll, setConvSelectAll] = useState(false);
   const [compatibilityQs, setCompatibilityQs] = useState([]);
   const [conversationQs, setConversationQs] = useState([]);
   const [selectedAnswers, setSelectedAnswers] = useState([]);
@@ -22,10 +24,10 @@ const ResultsStep = () => {
 
   useEffect(() => {
     const descriptions = {
-      seriousDater: `You're looking to form a meaningful romantic connection with someone.`,
-      casualDater: `You're not looking for anything serious, you just want to have some fun.`,
-      goWithTheFlow: `You're someone who is open to seeing where things go (open to casual or serious dating depending on the person).`,
-      workingOnMyself: `You're someone who prioritizes their own life over dating someone new at the moment.`
+      seriousDater: `You're looking to form a meaningful romantic connection. You want to find a partner who truly cares about you and wants to be an active part of your life.`,
+      casualDater: `You're not looking for anything serious right now. You just want to have some fun without any serious commitments.`,
+      goWithTheFlow: `You're open to seeing where things go with someone. You are open to casual or serious dating depending on the person you're seeing.`,
+      workingOnMyself: `You are currently prioritizing your own life over dating at the moment. You're open to meeting someone new, but your personal goals are more important right now.`
     };
 
     let highestCount = 0;
@@ -72,6 +74,36 @@ const ResultsStep = () => {
     setConversationQs(convArr);
   }, [quizData]);
 
+  useEffect(() => {
+    let arr = [];
+    compatibilityQs.forEach((q) => {
+      if (selectedAnswers.includes(q)) {
+        arr.push(q);
+      }
+    });
+    if (arr.length === 5) {
+      setCompSelectAll(true);
+    } else {
+      setCompSelectAll(false);
+    }
+    arr.splice(0);
+  }, [selectedAnswers, compatibilityQs]);
+
+  useEffect(() => {
+    let arr = [];
+    conversationQs.forEach((q) => {
+      if (selectedAnswers.includes(q)) {
+        arr.push(q);
+      }
+    });
+    if (arr.length === 5) {
+      setConvSelectAll(true);
+    } else {
+      setConvSelectAll(false);
+    }
+    arr.splice(0);
+  }, [selectedAnswers, conversationQs]);
+
   const handleExpand = (list) => {
     if (list === "compatibility") {
       setCompCollapsed(!compCollapsed);
@@ -83,8 +115,7 @@ const ResultsStep = () => {
   const handleSelect = (ans) => {
     if (selectedAnswers.includes(ans)) {
       setSelectedAnswers((prevState) => {
-        let newState = [...prevState];
-        let filteredArr = newState.filter((i) => i !== ans);
+        let filteredArr = prevState.filter((i) => i !== ans);
         return filteredArr;
       });
     } else {
@@ -108,7 +139,23 @@ const ResultsStep = () => {
     });
   };
 
+  const handleUnselectAll = (arr) => {
+    arr.forEach((q) => {
+      if (selectedAnswers.includes(q)) {
+        setSelectedAnswers((prevState) => {
+          let filteredArr = prevState.filter((i) => i !== q);
+          return filteredArr;
+        });
+      }
+    });
+  };
+
   const saveSelected = () => {
+    setUserData((prevState) => {
+      let newState = { ...prevState };
+      newState.showOnProfile = true;
+      return newState;
+    });
     for (const q in quizData) {
       if (selectedAnswers.includes(quizData[q])) {
         setQuizData((prevState) => {
@@ -182,14 +229,25 @@ const ResultsStep = () => {
             </button>
           </div>
           <ul className={compCollapsed ? styles.collapsed : null}>
-            <button
-              onClick={() => {
-                handleSelectAll(compatibilityQs);
-              }}
-              className={styles.selectAllBtn}
-            >
-              Select All
-            </button>
+            {compSelectAll ? (
+              <button
+                onClick={() => {
+                  handleUnselectAll(compatibilityQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Unselect All
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  handleSelectAll(compatibilityQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Select All
+              </button>
+            )}
             {compatibilityQs.map((item) => (
               <li key={item.key}>
                 <button
@@ -234,14 +292,25 @@ const ResultsStep = () => {
             </button>
           </div>
           <ul className={convCollapsed ? styles.collapsed : null}>
-            <button
-              onClick={() => {
-                handleSelectAll(conversationQs);
-              }}
-              className={styles.selectAllBtn}
-            >
-              Select All
-            </button>
+            {convSelectAll ? (
+              <button
+                onClick={() => {
+                  handleUnselectAll(conversationQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Unselect All
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  handleSelectAll(conversationQs);
+                }}
+                className={styles.selectAllBtn}
+              >
+                Select All
+              </button>
+            )}
             {conversationQs.map((item) => (
               <li key={item.key}>
                 <button
