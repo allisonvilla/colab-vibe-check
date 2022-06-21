@@ -26,6 +26,10 @@ function Index() {
         </div>
         <div className={styles.age}>{userData.age}</div>
         <div className={styles.breakScreen}>
+          <img
+            src={require("assets/vibe-check-break.png")}
+            alt="A cartoon of people enjoying their hobbies"
+          />
           <div>
             Now let's answer some fun questions to help your matches connect with you easier!
           </div>
