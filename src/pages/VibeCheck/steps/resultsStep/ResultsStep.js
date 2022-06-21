@@ -41,7 +41,14 @@ const ResultsStep = () => {
         setDaterType("goWithTheFlow");
       }
     }
-  }, [daterType, description, possibleOutcomes]);
+
+    setUserData((prevState) => {
+      let newState = { ...prevState };
+      newState.daterType = daterType;
+      newState.daterDesc = description;
+      return newState;
+    });
+  }, [daterType, description, possibleOutcomes, setUserData]);
 
   useEffect(() => {
     const compArr = [];
@@ -146,8 +153,7 @@ const ResultsStep = () => {
   const saveSelected = () => {
     setUserData((prevState) => {
       let newState = { ...prevState };
-      newState.daterType = daterType;
-      newState.daterDesc = description;
+      newState.showOnProfile = true;
       return newState;
     });
     for (const q in quizData) {

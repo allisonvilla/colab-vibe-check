@@ -44,6 +44,7 @@ const Results = () => {
       let newState = { ...prevState };
       newState.daterType = null;
       newState.daterDesc = null;
+      newState.showOnProfile = false;
       return newState;
     });
   };

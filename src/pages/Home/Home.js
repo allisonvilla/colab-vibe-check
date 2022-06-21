@@ -14,7 +14,7 @@ function Home() {
         {userData.name} {userData.age}
       </h1>
       <div className={styles.divider} />
-      {userData.daterType ? (
+      {userData.daterType && userData.showOnProfile ? (
         <Link to="/myresults" className={styles.resultsBtn}>
           Vibe Check Results <HiOutlineChevronDoubleRight />
         </Link>
