@@ -1,6 +1,6 @@
 import { UserContext } from "App";
 import { useContext, useEffect, useState } from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Navigate, useNavigate, Link } from "react-router-dom";
 import { HiOutlineChevronDoubleRight } from "react-icons/hi";
 import styles from "./styles.module.scss";
 
@@ -144,14 +144,9 @@ const Results = () => {
           </ul>
         </div>
 
-        <div className={styles.addAnswers}>
-          <button
-            onClick={() => {
-              navigate("/");
-            }}
-          >
-            Back <HiOutlineChevronDoubleRight />
-          </button>
+        <div className={styles.lockedIn}>
+          <Link to="/">Back to profile</Link>
+          <button>Remove from profile</button>
         </div>
       </div>
     );
